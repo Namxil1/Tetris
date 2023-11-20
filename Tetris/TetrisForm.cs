@@ -8,7 +8,7 @@ namespace Tetris
         int cellSize = 20;
         int gamewidth = 10;
         int gameheight = 20;
-        /test
+        
         public TetrisForm()
         {
             InitializeComponent();
