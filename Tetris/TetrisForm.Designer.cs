@@ -38,9 +38,10 @@ namespace Tetris
             // 
             // panelGame
             // 
-            this.panelGame.Location = new System.Drawing.Point(226, 12);
+            this.panelGame.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelGame.Location = new System.Drawing.Point(0, 0);
             this.panelGame.Name = "panelGame";
-            this.panelGame.Size = new System.Drawing.Size(330, 415);
+            this.panelGame.Size = new System.Drawing.Size(800, 450);
             this.panelGame.TabIndex = 0;
             this.panelGame.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelGame_Paint);
             // 
