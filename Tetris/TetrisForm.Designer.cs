@@ -41,7 +41,7 @@ namespace Tetris
             this.panelGame.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelGame.Location = new System.Drawing.Point(0, 0);
             this.panelGame.Name = "panelGame";
-            this.panelGame.Size = new System.Drawing.Size(800, 450);
+            this.panelGame.Size = new System.Drawing.Size(713, 368);
             this.panelGame.TabIndex = 0;
             this.panelGame.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelGame_Paint);
             // 
@@ -49,7 +49,7 @@ namespace Tetris
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(713, 368);
             this.Controls.Add(this.panelGame);
             this.Name = "TetrisForm";
             this.Text = "Tetris";
