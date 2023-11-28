@@ -21,22 +21,6 @@ namespace Tetris
             int cellSize = 40;
             g.FillRectangle(brush, x * cellSize, y * cellSize, cellSize, cellSize);
         }
-
-        //private void InitializeIBlock()
-        //{
-        //    TetrisBlock[] iBlock =
-        //    {
-        //        new TetrisBlock(new Point(0, 0), Color.LightBlue),
-        //        new TetrisBlock(new Point(1, 0), Color.LightBlue),
-        //        new TetrisBlock(new Point(2, 0), Color.LightBlue),
-        //        new TetrisBlock(new Point(3, 0), Color.LightBlue),
-        //    };
-        //    foreach (var block in iBlock)
-        //    {
-        //        Controls.Add(block.PictureBox);
-        //    }
-        //}
-
         public void PlaceBlock(int x, int y, int colorCode)
         {
             Color color;
@@ -93,7 +77,6 @@ namespace Tetris
             GameTimer.Enabled = true;
             gameActive = true;
         }
-
         private void TetrisForm_Load(object sender, EventArgs e)
         {
             CenterPanel();
@@ -101,7 +84,22 @@ namespace Tetris
 
         private void TetrisForm_KeyDown(object sender, KeyEventArgs e)
         {
-
+            
+            if (gameActive)
+            {
+                if ( e.KeyCode == Keys.Left || e.KeyCode == Keys.A)
+                {
+                    game.moveLeft();
+                }
+                else if (e.KeyCode == Keys.D || e.KeyCode == Keys.Right)
+                {
+                    game.moveRight();
+                }
+                else if (e.KeyCode == Keys.S || e.KeyCode == Keys.Down)
+                {
+                    game.downByOne();
+                }
+            }
         }
 
         private void GameTimer_Tick(object sender, EventArgs e)

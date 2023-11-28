@@ -48,12 +48,6 @@
   <ItemGroup>
     <Compile Include="Blocks\Block.cs" />
     <Compile Include="Blocks\Blocks.cs" />
-    <Compile Include="Blocks\TetrisBlock.cs" />
-    <Compile Include="Blocks\I_Block.cs" />
-    <Compile Include="Blocks\J_Block.cs" />
-    <Compile Include="Blocks\L_Block.cs" />
-    <Compile Include="Blocks\O_Block.cs" />
-    <Compile Include="Blocks\S_Block.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,8 +62,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Blocks\T_Block.cs" />
-    <Compile Include="Blocks\Z_Block.cs" />
     <Compile Include="TetrisGame.cs" />
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

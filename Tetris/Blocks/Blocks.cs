@@ -30,13 +30,28 @@ namespace Tetris
             BlockC.X = 4;
             BlockC.Y = 1;
         }
+        private void newBlockL()
+        {
+            BlockMiddle.X = 5;
+            BlockMiddle.Y = 0;
+            BlockA.X = 4;
+            BlockA.Y = 0;
+            BlockB.X = 5;
+            BlockB.Y = 1;
+            BlockC.X = 5;
+            BlockC.Y = 2;
+        }
+
         public void newRandomBlock()
         {
             Random r = new Random();
-            switch(r.Next(0, 1))
+            switch(r.Next(0, 2))
             {
                 case 0:
                     newBlockCube(); 
+                    break;
+                case 1:
+                    newBlockL();
                     break;
                 
             }

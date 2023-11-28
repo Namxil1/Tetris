@@ -39,7 +39,7 @@ namespace Tetris
             // 
             // GameTimer
             // 
-            this.GameTimer.Interval = 200;
+            this.GameTimer.Interval = 500;
             this.GameTimer.Tick += new System.EventHandler(this.GameTimer_Tick);
             // 
             // panelGame
@@ -67,6 +67,7 @@ namespace Tetris
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panelGame);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Name = "TetrisForm";
             this.Text = "Tetris";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
