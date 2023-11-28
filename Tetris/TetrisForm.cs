@@ -8,19 +8,30 @@ namespace Tetris
     {
         Boolean gameActive;
         TetrisGame game;
+        private Graphics g;
         public TetrisForm()
         {
             InitializeComponent();
             //game = new TetrisGame(this);
             gameActive = false;
+            g = panelGame.CreateGraphics();
         }
-        private void DrawBlock(int x, int y,Color color)
+        
+
+        private void DrawBlock(int x, int y, Color color)
         {
-            Graphics g = panelGame.CreateGraphics();
-            Brush brush = new SolidBrush(color);
             int cellSize = 40;
-            g.FillRectangle(brush, x * cellSize, y * cellSize, cellSize, cellSize);
+
+            // Zeichne den gefüllten Block
+            Brush blockBrush = new SolidBrush(color);
+            g.FillRectangle(blockBrush, x * cellSize, y * cellSize, cellSize, cellSize);
+
+            // Zeichne das Gitter
+            Pen gridPen = new Pen(Color.White);
+
+            g.DrawRectangle(gridPen, x * cellSize, y * cellSize, cellSize, cellSize);
         }
+
         public void PlaceBlock(int x, int y, int colorCode)
         {
             Color color;
