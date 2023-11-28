@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Tetris
 {
-    internal class I_Block
+    public class I_Block
     {
+
     }
 }

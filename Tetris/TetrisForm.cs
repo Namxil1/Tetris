@@ -21,6 +21,20 @@ namespace Tetris
             int cellSize = 40;
             g.FillRectangle(brush, x * cellSize, y * cellSize, cellSize, cellSize);
         }
+        //private void InitializeIBlock()
+        //{
+        //    TetrisBlock[] iBlock =
+        //    {
+        //        new TetrisBlock(new Point(0, 0), Color.LightBlue),
+        //        new TetrisBlock(new Point(1, 0), Color.LightBlue),
+        //        new TetrisBlock(new Point(2, 0), Color.LightBlue),
+        //        new TetrisBlock(new Point(3, 0), Color.LightBlue),
+        //    };
+        //    foreach (var block in iBlock)
+        //    {
+        //        Controls.Add(block.PictureBox);
+        //    }
+        //}
 
         public void PlaceBlock(int x, int y, string colorCode)
         {
