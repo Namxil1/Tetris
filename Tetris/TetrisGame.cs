@@ -9,5 +9,10 @@ namespace Tetris
     internal class TetrisGame
     {
 
+        public void nextTick()
+        {
+
+        }
+
     }
 }
