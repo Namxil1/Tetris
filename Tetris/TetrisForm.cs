@@ -13,7 +13,22 @@ namespace Tetris
         {
             InitializeComponent();
             DrawGamefield();
+            //InitializeIBlock();
         }
+        //private void InitializeIBlock()
+        //{
+        //    TetrisBlock[] iBlock =
+        //    {
+        //        new TetrisBlock(new Point(0, 0), Color.LightBlue),
+        //        new TetrisBlock(new Point(1, 0), Color.LightBlue),
+        //        new TetrisBlock(new Point(2, 0), Color.LightBlue),
+        //        new TetrisBlock(new Point(3, 0), Color.LightBlue),
+        //    };
+        //    foreach (var block in iBlock)
+        //    {
+        //        Controls.Add(block.PictureBox);
+        //    }
+        //}
 
         private void PanelGame_Paint(object sender, PaintEventArgs e)
         {

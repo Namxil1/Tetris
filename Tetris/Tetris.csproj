@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Blocks\Block.cs" />
+    <Compile Include="Blocks\TetrisBlock.cs" />
     <Compile Include="Blocks\I_Block.cs" />
     <Compile Include="Blocks\J_Block.cs" />
     <Compile Include="Blocks\L_Block.cs" />
