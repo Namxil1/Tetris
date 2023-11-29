@@ -42,18 +42,93 @@ namespace Tetris
             BlockC.Y = 2;
         }
 
+        private void newBlockT()
+        {
+            BlockMiddle.X = 4;
+            BlockMiddle.Y = 0;
+            BlockA.X = 3;
+            BlockA.Y = 1;
+            BlockB.X = 4;
+            BlockB.Y = 1;
+            BlockC.X = 5;
+            BlockC.Y = 1;
+        }
+
+        private void newBlockJ()
+        {
+            BlockMiddle.X = 5;
+            BlockMiddle.Y = 0;
+            BlockA.X = 4;
+            BlockA.Y = 0;
+            BlockB.X = 4;
+            BlockB.Y = 1;
+            BlockC.X = 4;
+            BlockC.Y = 2;
+        }
+
+        private void newBlockI()
+        {
+            BlockMiddle.X = 5;
+            BlockMiddle.Y = 0;
+            BlockA.X = 5;
+            BlockA.Y = 1;
+            BlockB.X = 5;
+            BlockB.Y = 2;
+            BlockC.X = 5;
+            BlockC.Y = 3;
+        }
+
+        private void newBlockZ()
+        {
+            BlockMiddle.X = 4;
+            BlockMiddle.Y = 0;
+            BlockA.X = 5;
+            BlockA.Y = 0;
+            BlockB.X = 5;
+            BlockB.Y = 1;
+            BlockC.X = 6;
+            BlockC.Y = 1;
+        }
+
+        private void newBlockS()
+        {
+            BlockMiddle.X = 5;
+            BlockMiddle.Y = 0;
+            BlockA.X = 5;
+            BlockA.Y = 1;
+            BlockB.X = 4;
+            BlockB.Y = 1;
+            BlockC.X = 4;
+            BlockC.Y = 2;
+        }
+
         public void newRandomBlock()
         {
             Random r = new Random();
-            switch(r.Next(0, 2))
+            switch(r.Next(0, 7))
             {
                 case 0:
-                    newBlockCube(); 
+                    newBlockCube();
                     break;
                 case 1:
                     newBlockL();
                     break;
-                
+                case 2:
+                    newBlockT();
+                    break;
+                case 3:
+                    newBlockJ();
+                    break;
+                case 4:
+                    newBlockI();
+                    break;
+                case 5:
+                    newBlockZ();
+                    break;
+                case 6:
+                    newBlockS();
+                    break;
+
             }
         }
 
