@@ -131,6 +131,10 @@ namespace Tetris
                 {
                     game.downByOne();
                 }
+                else if (e.KeyCode == Keys.W)
+                {
+                    game.rotateClockwise();
+                }
             }
         }
 
