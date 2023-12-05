@@ -13,6 +13,7 @@ namespace Tetris
         private TetrisForm form;
         Blocks block;
         private int[,] gameField;
+        private int color = 1;
         public TetrisGame(TetrisForm form)
         {
             block = new Blocks();
@@ -28,6 +29,8 @@ namespace Tetris
         {
             ClearRows();
             block.newRandomBlock();
+            Random random = new Random();
+            color = random.Next(1, 4);
         }
         private void ClearRows()
         {
@@ -38,7 +41,7 @@ namespace Tetris
                //Check ob Reihe voll
                 for (int x = 0; x < 10; x++)
                 {
-                    if (gameField[x, y] < 2)
+                    if (gameField[x, y] == 0)
                     {
                         isRowFull = false;
                         break;
@@ -74,10 +77,10 @@ namespace Tetris
                     form.PlaceBlock(x, y, gameField[x,y]);
                 }
             }
-            form.PlaceBlock(block.BlockMiddle.X, block.BlockMiddle.Y,1);
-            form.PlaceBlock(block.BlockA.X, block.BlockA.Y, 1);
-            form.PlaceBlock(block.BlockB.X, block.BlockB.Y, 1);
-            form.PlaceBlock(block.BlockC.X, block.BlockC.Y, 1);
+            form.PlaceBlock(block.BlockMiddle.X, block.BlockMiddle.Y,color);
+            form.PlaceBlock(block.BlockA.X, block.BlockA.Y, color);
+            form.PlaceBlock(block.BlockB.X, block.BlockB.Y, color);
+            form.PlaceBlock(block.BlockC.X, block.BlockC.Y, color);
             form.UpdateGamePanel();
         }
 
@@ -85,8 +88,8 @@ namespace Tetris
         {
             if (block.BlockMiddle.Y < 21 && block.BlockA.Y < 21 && block.BlockB.Y < 21 && block.BlockC.Y < 21)
             {
-                if (gameField[block.BlockMiddle.X, block.BlockMiddle.Y + 1] < 2 && gameField[block.BlockA.X, block.BlockA.Y + 1] < 2
-                    && gameField[block.BlockB.X, block.BlockB.Y + 1] < 2 && gameField[block.BlockC.X, block.BlockC.Y + 1] < 2)
+                if (gameField[block.BlockMiddle.X, block.BlockMiddle.Y + 1] == 0 && gameField[block.BlockA.X, block.BlockA.Y + 1] == 0
+                    && gameField[block.BlockB.X, block.BlockB.Y + 1] == 0 && gameField[block.BlockC.X, block.BlockC.Y + 1] == 0)
                 {
                     block.BlockMiddle.Y += 1;
                     block.BlockA.Y += 1;
@@ -104,10 +107,10 @@ namespace Tetris
             }
             else
             {
-                gameField[block.BlockMiddle.X, block.BlockMiddle.Y] = 2;
-                gameField[block.BlockA.X, block.BlockA.Y] = 2;
-                gameField[block.BlockB.X, block.BlockB.Y] = 2;
-                gameField[block.BlockC.X, block.BlockC.Y] = 2;
+                gameField[block.BlockMiddle.X, block.BlockMiddle.Y] = color;
+                gameField[block.BlockA.X, block.BlockA.Y] = color;
+                gameField[block.BlockB.X, block.BlockB.Y] = color;
+                gameField[block.BlockC.X, block.BlockC.Y] = color;
                 newBlock();
             }
             updateGameField();
@@ -117,8 +120,8 @@ namespace Tetris
         {
             if (block.BlockMiddle.X > 0 && block.BlockA.X > 0 && block.BlockB.X > 0 && block.BlockC.X > 0)
             {
-                if (gameField[block.BlockMiddle.X-1, block.BlockMiddle.Y] < 2 && gameField[block.BlockA.X -1, block.BlockA.Y] < 2
-                    && gameField[block.BlockB.X-1, block.BlockB.Y] < 2 && gameField[block.BlockC.X-1, block.BlockC.Y] < 2)
+                if (gameField[block.BlockMiddle.X-1, block.BlockMiddle.Y] == 0 && gameField[block.BlockA.X -1, block.BlockA.Y] == 0
+                    && gameField[block.BlockB.X-1, block.BlockB.Y] == 0 && gameField[block.BlockC.X-1, block.BlockC.Y] == 0)
                 {
                     block.BlockMiddle.X -= 1;
                     block.BlockA.X -= 1;
@@ -134,8 +137,8 @@ namespace Tetris
         {
             if (block.BlockMiddle.X < 9 && block.BlockA.X < 9 && block.BlockB.X < 9 && block.BlockC.X < 9)
             {
-                if (gameField[block.BlockMiddle.X + 1, block.BlockMiddle.Y] < 2 && gameField[block.BlockA.X + 1, block.BlockA.Y] < 2
-                    && gameField[block.BlockB.X + 1, block.BlockB.Y] < 2 && gameField[block.BlockC.X + 1, block.BlockC.Y] < 2)
+                if (gameField[block.BlockMiddle.X + 1, block.BlockMiddle.Y] == 0 && gameField[block.BlockA.X + 1, block.BlockA.Y] == 0
+                    && gameField[block.BlockB.X + 1, block.BlockB.Y] == 0 && gameField[block.BlockC.X + 1, block.BlockC.Y] == 0)
                 {
                     block.BlockMiddle.X += 1;
                     block.BlockA.X += 1;
