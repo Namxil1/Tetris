@@ -13,6 +13,7 @@ namespace Tetris
         private Graphics bufferG;
         
         public int Score { get => Convert.ToInt32(textBoxScore.Text); set => textBoxScore.Text = value.ToString(); }
+        public int Intervall { get => GameTimer.Interval; set => GameTimer.Interval = value; }
 
         public TetrisForm()
         {

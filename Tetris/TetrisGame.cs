@@ -26,6 +26,7 @@ namespace Tetris
         public void nextTick()
         {
             downByOne();
+            form.Intervall--;
         }
         public void newBlock()
         {
@@ -180,7 +181,7 @@ namespace Tetris
             relative.BlockC.Y = block.BlockC.Y - block.BlockMiddle.Y;
 
             // Rotationsformel anwenden
-            int tempX, tempY;
+            int tempX;
 
             // BlockA rotieren
             tempX = relative.BlockA.X;
