@@ -40,7 +40,7 @@ namespace Tetris
             {
                 bool isRowFull = true;
 
-               //Check ob Reihe voll
+                //Check ob Reihe voll
                 for (int x = 0; x < 10; x++)
                 {
                     if (gameField[x, y] == 0)
@@ -50,7 +50,7 @@ namespace Tetris
                     }
                 }
 
-                
+
                 if (isRowFull)
                 {
                     //Reihe leeren
@@ -76,10 +76,10 @@ namespace Tetris
             {
                 for (int y = 0; y < 22; y++)
                 {
-                    form.PlaceBlock(x, y, gameField[x,y]);
+                    form.PlaceBlock(x, y, gameField[x, y]);
                 }
             }
-            form.PlaceBlock(block.BlockMiddle.X, block.BlockMiddle.Y,color);
+            form.PlaceBlock(block.BlockMiddle.X, block.BlockMiddle.Y, color);
             form.PlaceBlock(block.BlockA.X, block.BlockA.Y, color);
             form.PlaceBlock(block.BlockB.X, block.BlockB.Y, color);
             form.PlaceBlock(block.BlockC.X, block.BlockC.Y, color);
@@ -122,8 +122,8 @@ namespace Tetris
         {
             if (block.BlockMiddle.X > 0 && block.BlockA.X > 0 && block.BlockB.X > 0 && block.BlockC.X > 0)
             {
-                if (gameField[block.BlockMiddle.X-1, block.BlockMiddle.Y] == 0 && gameField[block.BlockA.X -1, block.BlockA.Y] == 0
-                    && gameField[block.BlockB.X-1, block.BlockB.Y] == 0 && gameField[block.BlockC.X-1, block.BlockC.Y] == 0)
+                if (gameField[block.BlockMiddle.X - 1, block.BlockMiddle.Y] == 0 && gameField[block.BlockA.X - 1, block.BlockA.Y] == 0
+                    && gameField[block.BlockB.X - 1, block.BlockB.Y] == 0 && gameField[block.BlockC.X - 1, block.BlockC.Y] == 0)
                 {
                     block.BlockMiddle.X -= 1;
                     block.BlockA.X -= 1;
@@ -151,37 +151,88 @@ namespace Tetris
             }
         }
 
+        //public void rotateClockwise()
+        //{
+        //        // Speichern der aktuellen Positionen der Blöcke
+        //        int middleX = block.BlockMiddle.X;
+        //        int middleY = block.BlockMiddle.Y;
+        //        int aX = block.BlockA.X;
+        //        int aY = block.BlockA.Y;
+        //        int bX = block.BlockB.X;
+        //        int bY = block.BlockB.Y;
+        //        int cX = block.BlockC.X;
+        //        int cY = block.BlockC.Y;
+
+        //        // Berechnung der neuen Positionen nach der Drehung um 90 Grad im Uhrzeigersinn
+        //        block.BlockA.X = middleX + (middleY - aY);
+        //        block.BlockA.Y = middleY - (middleX - aX);
+
+        //        block.BlockB.X = middleX + (middleY - bY);
+        //        block.BlockB.Y = middleY - (middleX - bX);
+
+        //        block.BlockC.X = middleX + (middleY - cY);
+        //        block.BlockC.Y = middleY - (middleX - cX);
+
+        //        // Aktualisierung des Spielfelds
+        //        updateGameField();
+
+        //    //neueX = centerX + (alteY - centerY)
+        //    //neueY = centerY - (alteX - centerX)
+
+        //}
         public void rotateClockwise()
         {
-            //public void rotateClockwise()
-            //{
-            //    // Speichern der aktuellen Positionen der Blöcke
-            //    int middleX = block.BlockMiddle.X;
-            //    int middleY = block.BlockMiddle.Y;
-            //    int aX = block.BlockA.X;
-            //    int aY = block.BlockA.Y;
-            //    int bX = block.BlockB.X;
-            //    int bY = block.BlockB.Y;
-            //    int cX = block.BlockC.X;
-            //    int cY = block.BlockC.Y;
+            Blocks relative = new Blocks();
+            relative.BlockA.X = block.BlockA.X - block.BlockMiddle.X;
+            relative.BlockA.Y = block.BlockA.Y - block.BlockMiddle.Y;
 
-            //    // Berechnung der neuen Positionen nach der Drehung um 90 Grad im Uhrzeigersinn
-            //    block.BlockA.X = middleX + (middleY - aY);
-            //    block.BlockA.Y = middleY - (middleX - aX);
+            relative.BlockB.X = block.BlockB.X - block.BlockMiddle.X;
+            relative.BlockB.Y = block.BlockB.Y - block.BlockMiddle.Y;
 
-            //    block.BlockB.X = middleX + (middleY - bY);
-            //    block.BlockB.Y = middleY - (middleX - bX);
+            relative.BlockC.X = block.BlockC.X - block.BlockMiddle.X;
+            relative.BlockC.Y = block.BlockC.Y - block.BlockMiddle.Y;
 
-            //    block.BlockC.X = middleX + (middleY - cY);
-            //    block.BlockC.Y = middleY - (middleX - cX);
+            // Rotationsformel anwenden
+            int tempX, tempY;
 
-            //    // Aktualisierung des Spielfelds
-            //    updateGameField();
-            //}
+            // BlockA rotieren
+            tempX = relative.BlockA.X;
+            relative.BlockA.X = -relative.BlockA.Y;
+            relative.BlockA.Y = tempX;
 
-            //neueX = centerX + (alteY - centerY)
-            //neueY = centerY - (alteX - centerX)
+            // BlockB rotieren
+            tempX = relative.BlockB.X;
+            relative.BlockB.X = -relative.BlockB.Y;
+            relative.BlockB.Y = tempX;
 
+            // BlockC rotieren
+            tempX = relative.BlockC.X;
+            relative.BlockC.X = -relative.BlockC.Y;
+            relative.BlockC.Y = tempX;
+
+            relative.BlockA.X = relative.BlockA.X + block.BlockMiddle.X;
+            relative.BlockA.Y = relative.BlockA.Y + block.BlockMiddle.Y;
+
+            relative.BlockB.X = relative.BlockB.X + block.BlockMiddle.X;
+            relative.BlockB.Y = relative.BlockB.Y + block.BlockMiddle.Y;
+
+            relative.BlockC.X = relative.BlockC.X + block.BlockMiddle.X;
+            relative.BlockC.Y = relative.BlockC.Y + block.BlockMiddle.Y;
+            if (relative.BlockA.X >= 0 && relative.BlockA.X <= 9
+            && relative.BlockA.Y >= 0 && relative.BlockA.Y <= 21
+            && relative.BlockB.X >= 0 && relative.BlockB.X <= 9
+            && relative.BlockB.Y >= 0 && relative.BlockB.Y <= 21
+            && relative.BlockC.X >= 0 && relative.BlockC.X <= 9
+            && relative.BlockC.Y >= 0 && relative.BlockC.Y <= 21)
+            {
+                if (gameField[relative.BlockA.X, relative.BlockA.Y] == 0 && gameField[relative.BlockB.X, relative.BlockB.Y] == 0 && gameField[relative.BlockC.X, relative.BlockC.Y] == 0)
+                {
+                    block.BlockA = relative.BlockA;
+                    block.BlockB = relative.BlockB;
+                    block.BlockC = relative.BlockC;
+                    updateGameField();
+                }
+            }
         }
     }
 }
