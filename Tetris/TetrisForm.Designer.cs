@@ -107,6 +107,7 @@ namespace Tetris
             this.textBoxScore.ReadOnly = true;
             this.textBoxScore.Size = new System.Drawing.Size(100, 20);
             this.textBoxScore.TabIndex = 6;
+            this.textBoxScore.Text = "0";
             // 
             // textBoxHighscore
             // 
