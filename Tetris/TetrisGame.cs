@@ -26,7 +26,6 @@ namespace Tetris
         public void nextTick()
         {
             downByOne();
-            form.Intervall--;
         }
         public void newBlock()
         {
@@ -85,6 +84,10 @@ namespace Tetris
             else if (rowsCleared == 4)
             {
                 form.Score += 1200;
+            }
+            if (form.Intervall > 250)
+            {
+                form.Intervall-= new Random().Next(1,15);
             }
         }
 

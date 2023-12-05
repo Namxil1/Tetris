@@ -45,7 +45,7 @@ namespace Tetris
             // 
             // GameTimer
             // 
-            this.GameTimer.Interval = 500;
+            this.GameTimer.Interval = 1500;
             this.GameTimer.Tick += new System.EventHandler(this.GameTimer_Tick);
             // 
             // panelGame
