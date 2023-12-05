@@ -78,6 +78,7 @@ namespace Tetris
             form.PlaceBlock(block.BlockA.X, block.BlockA.Y, 1);
             form.PlaceBlock(block.BlockB.X, block.BlockB.Y, 1);
             form.PlaceBlock(block.BlockC.X, block.BlockC.Y, 1);
+            form.UpdateGamePanel();
         }
 
         public void downByOne()
