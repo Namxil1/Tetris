@@ -33,11 +33,11 @@ namespace Tetris
         private void newBlockL()
         {
             BlockMiddle.X = 5;
-            BlockMiddle.Y = 0;
+            BlockMiddle.Y = 1;
             BlockA.X = 4;
             BlockA.Y = 0;
             BlockB.X = 5;
-            BlockB.Y = 1;
+            BlockB.Y = 0;
             BlockC.X = 5;
             BlockC.Y = 2;
         }
@@ -69,35 +69,35 @@ namespace Tetris
         private void newBlockI()
         {
             BlockMiddle.X = 5;
-            BlockMiddle.Y = 0;
+            BlockMiddle.Y = 2;
             BlockA.X = 5;
             BlockA.Y = 1;
             BlockB.X = 5;
-            BlockB.Y = 2;
+            BlockB.Y = 0;
             BlockC.X = 5;
             BlockC.Y = 3;
         }
 
         private void newBlockZ()
         {
-            BlockMiddle.X = 4;
-            BlockMiddle.Y = 0;
+            BlockMiddle.X = 5;
+            BlockMiddle.Y = 1;
             BlockA.X = 5;
             BlockA.Y = 0;
-            BlockB.X = 5;
-            BlockB.Y = 1;
+            BlockB.X = 4;
+            BlockB.Y = 0;
             BlockC.X = 6;
             BlockC.Y = 1;
         }
 
         private void newBlockS()
         {
-            BlockMiddle.X = 5;
-            BlockMiddle.Y = 0;
+            BlockMiddle.X = 4;
+            BlockMiddle.Y = 1;
             BlockA.X = 5;
             BlockA.Y = 1;
-            BlockB.X = 4;
-            BlockB.Y = 1;
+            BlockB.X = 5;
+            BlockB.Y = 0;
             BlockC.X = 4;
             BlockC.Y = 2;
         }

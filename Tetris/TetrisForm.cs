@@ -132,7 +132,7 @@ namespace Tetris
                 }
                 else if (e.KeyCode == Keys.W)
                 {
-                    game.rotateClockwise();
+                    game.rotateBlock();
                 }
             }
         }

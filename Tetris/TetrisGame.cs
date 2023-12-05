@@ -146,7 +146,6 @@ namespace Tetris
                     block.BlockA.X -= 1;
                     block.BlockB.X -= 1;
                     block.BlockC.X -= 1;
-
                     updateGameField();
                 }
             }
@@ -168,7 +167,7 @@ namespace Tetris
             }
         }
 
-        public void rotateClockwise()
+        public void rotateBlock()
         {
             Blocks relative = new Blocks();
             relative.BlockA.X = block.BlockA.X - block.BlockMiddle.X;
