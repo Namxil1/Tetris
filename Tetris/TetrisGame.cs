@@ -30,7 +30,7 @@ namespace Tetris
             ClearRows();
             block.newRandomBlock();
             Random random = new Random();
-            color = random.Next(1, 4);
+            color = random.Next(1, 7);
         }
         private void ClearRows()
         {
@@ -98,10 +98,10 @@ namespace Tetris
                 }
                 else
                 {
-                    gameField[block.BlockMiddle.X, block.BlockMiddle.Y] = 2;
-                    gameField[block.BlockA.X, block.BlockA.Y] = 2;
-                    gameField[block.BlockB.X, block.BlockB.Y] = 2;
-                    gameField[block.BlockC.X, block.BlockC.Y] = 2;
+                    gameField[block.BlockMiddle.X, block.BlockMiddle.Y] = color;
+                    gameField[block.BlockA.X, block.BlockA.Y] = color;
+                    gameField[block.BlockB.X, block.BlockB.Y] = color;
+                    gameField[block.BlockC.X, block.BlockC.Y] = color;
                     newBlock();
                 }
             }

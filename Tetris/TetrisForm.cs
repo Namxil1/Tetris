@@ -56,10 +56,19 @@ namespace Tetris
                     color = Color.Blue;
                     break;
                 case 3:
-                    color = Color.White;
+                    color = Color.Purple;
                     break;
                 case 4:
-                    color = Color.LightBlue;
+                    color = Color.DarkGreen;
+                    break;
+                case 5:
+                    color = Color.Yellow;
+                    break;
+                case 6:
+                    color = Color.Green;
+                    break;
+                case 7:
+                    color = Color.Orange;
                     break;
                 default:
                     throw new ArgumentException("Wrong Color");
