@@ -34,25 +34,45 @@ namespace Tetris
             this.components = new System.ComponentModel.Container();
             this.GameTimer = new System.Windows.Forms.Timer(this.components);
             this.panelGame = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // GameTimer
+            // 
+            this.GameTimer.Interval = 500;
+            this.GameTimer.Tick += new System.EventHandler(this.GameTimer_Tick);
             // 
             // panelGame
             // 
-            this.panelGame.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelGame.Location = new System.Drawing.Point(0, 0);
+            this.panelGame.Location = new System.Drawing.Point(234, 12);
             this.panelGame.Name = "panelGame";
-            this.panelGame.Size = new System.Drawing.Size(713, 368);
+            this.panelGame.Size = new System.Drawing.Size(400, 880);
             this.panelGame.TabIndex = 0;
-            this.panelGame.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelGame_Paint);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(16, 250);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // TetrisForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(713, 368);
+            this.ClientSize = new System.Drawing.Size(956, 796);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panelGame);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Name = "TetrisForm";
             this.Text = "Tetris";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.TetrisForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TetrisForm_KeyDown);
             this.ResumeLayout(false);
 
         }
@@ -62,6 +82,7 @@ namespace Tetris
 
         private System.Windows.Forms.Timer GameTimer;
         private System.Windows.Forms.Panel panelGame;
+        private Button button1;
     }
 }
 

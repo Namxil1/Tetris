@@ -1,42 +1,127 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Tetris
 {
     public partial class TetrisForm : Form
     {
-        int cellSize = 30;
-        int gamewidth = 10;
-        int gameheight = 20;
-        
+        Boolean gameActive;
+        TetrisGame game;
+        private Graphics g;
         public TetrisForm()
         {
             InitializeComponent();
-            DrawGamefield();
-        }
-
-        private void PanelGame_Paint(object sender, PaintEventArgs e)
-        {
-            DrawGamefield();
-        }
-
-        private void DrawGamefield()
-        {
-            Graphics g = panelGame.CreateGraphics();
-            g.FillRectangle(new SolidBrush(Color.Black), new Rectangle(0, 0, gamewidth*cellSize, gameheight*cellSize));
-            //Draw vertical Lines
-            for (int x = 0; x <= gamewidth * cellSize; x += cellSize)
-            {
-                g.DrawLine(Pens.White, x, 0, x, gameheight * cellSize);
-            }
-
-            //Draw horizontal Lines
-            for (int y = 0; y <= gameheight * cellSize; y += cellSize)
-            {
-                g.DrawLine(Pens.White, 0, y, gamewidth * cellSize, y);
-            }
-            g.Dispose();
+            //game = new TetrisGame(this);
+            gameActive = false;
+            g = panelGame.CreateGraphics();
         }
         
+
+        private void DrawBlock(int x, int y, Color color)
+        {
+            int cellSize = 40;
+
+            // Zeichne den gefüllten Block
+            Brush blockBrush = new SolidBrush(color);
+            g.FillRectangle(blockBrush, x * cellSize, y * cellSize, cellSize, cellSize);
+
+            // Zeichne das Gitter
+            Pen gridPen = new Pen(Color.White);
+
+            g.DrawRectangle(gridPen, x * cellSize, y * cellSize, cellSize, cellSize);
+        }
+
+        public void PlaceBlock(int x, int y, int colorCode)
+        {
+            Color color;
+            switch (colorCode)
+            {
+                case 0:
+                    color = Color.Black;
+                    break;
+                case 1:
+                    color = Color.Red;
+                    break;
+                case 2:
+                    color = Color.Blue;
+                    break;
+                case 3:
+                    color = Color.White;
+                    break;
+                case 4:
+                    color = Color.LightBlue;
+                    break;
+                default:
+                    throw new ArgumentException("Wrong Color");
+            }
+            DrawBlock (x, y, color);
+        }
+
+        public void ResetGameField()
+        {
+            for (int y = 0; y < 22; y++)
+            {
+                for (int x = 0; x < 10; x++)
+                {
+                    PlaceBlock(x, y, 0);
+                }
+            }
+        }
+        private void CenterPanel()
+        {
+            int screenWidth = Screen.PrimaryScreen.Bounds.Width;
+            int screenHeight = Screen.PrimaryScreen.Bounds.Height;
+
+            int panelWidth = panelGame.Width;
+            int panelHeight = panelGame.Height;
+
+            int x = (screenWidth - panelWidth) / 2;
+            int y = (screenHeight - panelHeight) / 2;
+
+            panelGame.Location = new Point(x, y);
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ResetGameField();
+            //PlaceBlock(0, 1, 2);
+            //PlaceBlock(5, 10,2);
+            //PlaceBlock(5, 0,3);
+            game = new TetrisGame(this);
+            GameTimer.Enabled = true;
+            gameActive = true;
+        }
+        private void TetrisForm_Load(object sender, EventArgs e)
+        {
+            CenterPanel();
+        }
+
+        private void TetrisForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+            if (gameActive)
+            {
+                if ( e.KeyCode == Keys.Left || e.KeyCode == Keys.A)
+                {
+                    game.moveLeft();
+                }
+                else if (e.KeyCode == Keys.D || e.KeyCode == Keys.Right)
+                {
+                    game.moveRight();
+                }
+                else if (e.KeyCode == Keys.S || e.KeyCode == Keys.Down)
+                {
+                    game.downByOne();
+                }
+            }
+        }
+
+        private void GameTimer_Tick(object sender, EventArgs e)
+        {
+            if (gameActive)
+            {
+                game.nextTick();
+            }
+        }
     }
 }

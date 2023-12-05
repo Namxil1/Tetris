@@ -30,7 +30,7 @@
         {
             this.Benutzernamentextbox1 = new System.Windows.Forms.TextBox();
             this.Passworttextbox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonAnmelden = new System.Windows.Forms.Button();
             this.Benutzer_Anlegen = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -50,14 +50,15 @@
             this.Passworttextbox1.TabIndex = 1;
             this.Passworttextbox1.UseSystemPasswordChar = true;
             // 
-            // button1
+            // buttonAnmelden
             // 
-            this.button1.Location = new System.Drawing.Point(28, 103);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Anmelden";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonAnmelden.Location = new System.Drawing.Point(28, 103);
+            this.buttonAnmelden.Name = "buttonAnmelden";
+            this.buttonAnmelden.Size = new System.Drawing.Size(75, 23);
+            this.buttonAnmelden.TabIndex = 2;
+            this.buttonAnmelden.Text = "Anmelden";
+            this.buttonAnmelden.UseVisualStyleBackColor = true;
+            this.buttonAnmelden.Click += new System.EventHandler(this.buttonAnmelden_Click);
             // 
             // Benutzer_Anlegen
             // 
@@ -67,6 +68,7 @@
             this.Benutzer_Anlegen.TabIndex = 3;
             this.Benutzer_Anlegen.Text = "Benutzer_Anlegen";
             this.Benutzer_Anlegen.UseVisualStyleBackColor = true;
+            this.Benutzer_Anlegen.Click += new System.EventHandler(this.Benutzer_Anlegen_Click);
             // 
             // LoginForm
             // 
@@ -74,7 +76,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(291, 324);
             this.Controls.Add(this.Benutzer_Anlegen);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonAnmelden);
             this.Controls.Add(this.Passworttextbox1);
             this.Controls.Add(this.Benutzernamentextbox1);
             this.Name = "LoginForm";
@@ -88,7 +90,7 @@
 
         private System.Windows.Forms.TextBox Benutzernamentextbox1;
         private System.Windows.Forms.TextBox Passworttextbox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonAnmelden;
         private System.Windows.Forms.Button Benutzer_Anlegen;
     }
 }
