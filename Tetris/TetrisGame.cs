@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Tetris
@@ -133,7 +135,7 @@ namespace Tetris
             }
         }
 
-        internal void moveRight()
+        public void moveRight()
         {
             if (block.BlockMiddle.X < 9 && block.BlockA.X < 9 && block.BlockB.X < 9 && block.BlockC.X < 9)
             {
@@ -147,6 +149,39 @@ namespace Tetris
                     updateGameField();
                 }
             }
+        }
+
+        public void rotateClockwise()
+        {
+            //public void rotateClockwise()
+            //{
+            //    // Speichern der aktuellen Positionen der Blöcke
+            //    int middleX = block.BlockMiddle.X;
+            //    int middleY = block.BlockMiddle.Y;
+            //    int aX = block.BlockA.X;
+            //    int aY = block.BlockA.Y;
+            //    int bX = block.BlockB.X;
+            //    int bY = block.BlockB.Y;
+            //    int cX = block.BlockC.X;
+            //    int cY = block.BlockC.Y;
+
+            //    // Berechnung der neuen Positionen nach der Drehung um 90 Grad im Uhrzeigersinn
+            //    block.BlockA.X = middleX + (middleY - aY);
+            //    block.BlockA.Y = middleY - (middleX - aX);
+
+            //    block.BlockB.X = middleX + (middleY - bY);
+            //    block.BlockB.Y = middleY - (middleX - bX);
+
+            //    block.BlockC.X = middleX + (middleY - cY);
+            //    block.BlockC.Y = middleY - (middleX - cX);
+
+            //    // Aktualisierung des Spielfelds
+            //    updateGameField();
+            //}
+
+            //neueX = centerX + (alteY - centerY)
+            //neueY = centerY - (alteX - centerX)
+
         }
     }
 }
