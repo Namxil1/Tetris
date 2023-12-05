@@ -43,3 +43,14 @@ C:\Users\aschebrock.jakob\Source\Repos\Namxil1\Tetris\Tetris\obj\Debug\Tetris.cs
 C:\Users\aschebrock.jakob\Source\Repos\Namxil1\Tetris\Tetris\obj\Debug\Tetris.exe
 C:\Users\aschebrock.jakob\Source\Repos\Namxil1\Tetris\Tetris\obj\Debug\Tetris.pdb
 C:\Users\sebas\Source\Repos\Namxil1\Tetris\Tetris\obj\Debug\Tetris.LoginForm.resources
+C:\Users\Nutzer\Source\Repos\Namxil1\Tetris\Tetris\obj\Debug\Tetris.csproj.AssemblyReference.cache
+C:\Users\Nutzer\Source\Repos\Namxil1\Tetris\Tetris\obj\Debug\Tetris.LoginForm.resources
+C:\Users\Nutzer\Source\Repos\Namxil1\Tetris\Tetris\obj\Debug\Tetris.TetrisForm.resources
+C:\Users\Nutzer\Source\Repos\Namxil1\Tetris\Tetris\obj\Debug\Tetris.Properties.Resources.resources
+C:\Users\Nutzer\Source\Repos\Namxil1\Tetris\Tetris\obj\Debug\Tetris.csproj.GenerateResource.cache
+C:\Users\Nutzer\Source\Repos\Namxil1\Tetris\Tetris\obj\Debug\Tetris.csproj.CoreCompileInputs.cache
+C:\Users\Nutzer\Source\Repos\Namxil1\Tetris\Tetris\obj\Debug\Tetris.exe
+C:\Users\Nutzer\Source\Repos\Namxil1\Tetris\Tetris\obj\Debug\Tetris.pdb
+C:\Users\Nutzer\Source\Repos\Namxil1\Tetris\Tetris\bin\Debug\Tetris.exe.config
+C:\Users\Nutzer\Source\Repos\Namxil1\Tetris\Tetris\bin\Debug\Tetris.exe
+C:\Users\Nutzer\Source\Repos\Namxil1\Tetris\Tetris\bin\Debug\Tetris.pdb
