@@ -44,14 +44,15 @@ namespace Tetris
                     }
                 }
 
-                //Alle Reihen runter
+                
                 if (isRowFull)
                 {
+                    //Reihe leeren
                     for (int x = 0; x < 10; x++)
                     {
                         gameField[x, y] = 0;
                     }
-
+                    //Alle Reihen runter
                     for (int i = y - 1; i >= 0; i--)
                     {
                         for (int x = 0; x < 10; x++)

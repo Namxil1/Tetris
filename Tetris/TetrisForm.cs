@@ -30,6 +30,11 @@ namespace Tetris
             Pen gridPen = new Pen(Color.White);
 
             g.DrawRectangle(gridPen, x * cellSize, y * cellSize, cellSize, cellSize);
+            
+        }
+        public void UpdateGamePanel()
+        {
+
         }
 
         public void PlaceBlock(int x, int y, int colorCode)
