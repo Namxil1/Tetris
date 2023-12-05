@@ -9,12 +9,16 @@ namespace Tetris
         Boolean gameActive;
         TetrisGame game;
         private Graphics g;
+        private Bitmap buffer;
+        private Graphics bufferG;
         public TetrisForm()
         {
             InitializeComponent();
             //game = new TetrisGame(this);
             gameActive = false;
             g = panelGame.CreateGraphics();
+            buffer = new Bitmap(panelGame.Width, panelGame.Height);
+            bufferG = Graphics.FromImage(buffer);
         }
         
 
@@ -24,12 +28,17 @@ namespace Tetris
 
             // Zeichne den gefüllten Block
             Brush blockBrush = new SolidBrush(color);
-            g.FillRectangle(blockBrush, x * cellSize, y * cellSize, cellSize, cellSize);
+            bufferG.FillRectangle(blockBrush, x * cellSize, y * cellSize, cellSize, cellSize);
 
             // Zeichne das Gitter
             Pen gridPen = new Pen(Color.White);
 
-            g.DrawRectangle(gridPen, x * cellSize, y * cellSize, cellSize, cellSize);
+            bufferG.DrawRectangle(gridPen, x * cellSize, y * cellSize, cellSize, cellSize);
+            
+        }
+        public void UpdateGamePanel()
+        {
+            g.DrawImage(buffer, 0, 0);
         }
 
         public void PlaceBlock(int x, int y, int colorCode)
@@ -47,10 +56,19 @@ namespace Tetris
                     color = Color.Blue;
                     break;
                 case 3:
-                    color = Color.White;
+                    color = Color.Purple;
                     break;
                 case 4:
-                    color = Color.LightBlue;
+                    color = Color.DarkGreen;
+                    break;
+                case 5:
+                    color = Color.Yellow;
+                    break;
+                case 6:
+                    color = Color.Green;
+                    break;
+                case 7:
+                    color = Color.Orange;
                     break;
                 default:
                     throw new ArgumentException("Wrong Color");
