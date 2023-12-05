@@ -56,12 +56,12 @@ namespace Tetris
 
         private void newBlockJ()
         {
-            BlockMiddle.X = 5;
-            BlockMiddle.Y = 0;
+            BlockMiddle.X = 4;
+            BlockMiddle.Y = 1;
             BlockA.X = 4;
             BlockA.Y = 0;
-            BlockB.X = 4;
-            BlockB.Y = 1;
+            BlockB.X = 5;
+            BlockB.Y = 0;
             BlockC.X = 4;
             BlockC.Y = 2;
         }
