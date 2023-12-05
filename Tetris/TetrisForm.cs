@@ -11,10 +11,12 @@ namespace Tetris
         private Graphics g;
         private Bitmap buffer;
         private Graphics bufferG;
+        
+        public int Score { get => Convert.ToInt32(textBoxScore.Text); set => textBoxScore.Text = value.ToString(); }
+
         public TetrisForm()
         {
             InitializeComponent();
-            //game = new TetrisGame(this);
             gameActive = false;
             g = panelGame.CreateGraphics();
             buffer = new Bitmap(panelGame.Width, panelGame.Height);
@@ -102,9 +104,6 @@ namespace Tetris
         private void button1_Click(object sender, EventArgs e)
         {
             ResetGameField();
-            //PlaceBlock(0, 1, 2);
-            //PlaceBlock(5, 10,2);
-            //PlaceBlock(5, 0,3);
             game = new TetrisGame(this);
             GameTimer.Enabled = true;
             gameActive = true;
@@ -137,7 +136,7 @@ namespace Tetris
                 }
             }
         }
-
+        
         private void GameTimer_Tick(object sender, EventArgs e)
         {
             if (gameActive)

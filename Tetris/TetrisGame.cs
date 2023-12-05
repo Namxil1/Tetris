@@ -36,6 +36,7 @@ namespace Tetris
         }
         private void ClearRows()
         {
+            int rowsCleared = 0;
             for (int y = 0; y < 22; y++)
             {
                 bool isRowFull = true;
@@ -50,9 +51,9 @@ namespace Tetris
                     }
                 }
 
-
                 if (isRowFull)
                 {
+                    rowsCleared++;
                     //Reihe leeren
                     for (int x = 0; x < 10; x++)
                     {
@@ -67,6 +68,22 @@ namespace Tetris
                         }
                     }
                 }
+            }
+            if (rowsCleared ==1)
+            {
+                form.Score +=40;
+            }
+            else if (rowsCleared == 2)
+            {
+                form.Score += 100;
+            }
+            else if (rowsCleared == 3)
+            {
+                form.Score += 300;
+            }
+            else if (rowsCleared == 4)
+            {
+                form.Score += 1200;
             }
         }
 
@@ -151,35 +168,6 @@ namespace Tetris
             }
         }
 
-        //public void rotateClockwise()
-        //{
-        //        // Speichern der aktuellen Positionen der Blöcke
-        //        int middleX = block.BlockMiddle.X;
-        //        int middleY = block.BlockMiddle.Y;
-        //        int aX = block.BlockA.X;
-        //        int aY = block.BlockA.Y;
-        //        int bX = block.BlockB.X;
-        //        int bY = block.BlockB.Y;
-        //        int cX = block.BlockC.X;
-        //        int cY = block.BlockC.Y;
-
-        //        // Berechnung der neuen Positionen nach der Drehung um 90 Grad im Uhrzeigersinn
-        //        block.BlockA.X = middleX + (middleY - aY);
-        //        block.BlockA.Y = middleY - (middleX - aX);
-
-        //        block.BlockB.X = middleX + (middleY - bY);
-        //        block.BlockB.Y = middleY - (middleX - bX);
-
-        //        block.BlockC.X = middleX + (middleY - cY);
-        //        block.BlockC.Y = middleY - (middleX - cX);
-
-        //        // Aktualisierung des Spielfelds
-        //        updateGameField();
-
-        //    //neueX = centerX + (alteY - centerY)
-        //    //neueY = centerY - (alteX - centerX)
-
-        //}
         public void rotateClockwise()
         {
             Blocks relative = new Blocks();
