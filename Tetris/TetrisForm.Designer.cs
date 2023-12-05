@@ -35,6 +35,12 @@ namespace Tetris
             this.GameTimer = new System.Windows.Forms.Timer(this.components);
             this.panelGame = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
+            this.lableScore = new System.Windows.Forms.Label();
+            this.labelHighscore = new System.Windows.Forms.Label();
+            this.labelLogInfo = new System.Windows.Forms.Label();
+            this.textBoxLoginInfo = new System.Windows.Forms.TextBox();
+            this.textBoxScore = new System.Windows.Forms.TextBox();
+            this.textBoxHighscore = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // GameTimer
@@ -51,19 +57,76 @@ namespace Tetris
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(16, 250);
+            this.button1.Location = new System.Drawing.Point(59, 715);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
+            this.button1.Text = "Start Game";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // lableScore
+            // 
+            this.lableScore.AutoSize = true;
+            this.lableScore.Location = new System.Drawing.Point(1205, 107);
+            this.lableScore.Name = "lableScore";
+            this.lableScore.Size = new System.Drawing.Size(35, 13);
+            this.lableScore.TabIndex = 2;
+            this.lableScore.Text = "Score";
+            // 
+            // labelHighscore
+            // 
+            this.labelHighscore.AutoSize = true;
+            this.labelHighscore.Location = new System.Drawing.Point(1196, 278);
+            this.labelHighscore.Name = "labelHighscore";
+            this.labelHighscore.Size = new System.Drawing.Size(55, 13);
+            this.labelHighscore.TabIndex = 3;
+            this.labelHighscore.Text = "Highscore";
+            // 
+            // labelLogInfo
+            // 
+            this.labelLogInfo.AutoSize = true;
+            this.labelLogInfo.Location = new System.Drawing.Point(56, 119);
+            this.labelLogInfo.Name = "labelLogInfo";
+            this.labelLogInfo.Size = new System.Drawing.Size(88, 13);
+            this.labelLogInfo.TabIndex = 4;
+            this.labelLogInfo.Text = "Angemeldet als : ";
+            // 
+            // textBoxLoginInfo
+            // 
+            this.textBoxLoginInfo.Location = new System.Drawing.Point(59, 135);
+            this.textBoxLoginInfo.Name = "textBoxLoginInfo";
+            this.textBoxLoginInfo.ReadOnly = true;
+            this.textBoxLoginInfo.Size = new System.Drawing.Size(100, 20);
+            this.textBoxLoginInfo.TabIndex = 5;
+            // 
+            // textBoxScore
+            // 
+            this.textBoxScore.Location = new System.Drawing.Point(1174, 135);
+            this.textBoxScore.Name = "textBoxScore";
+            this.textBoxScore.ReadOnly = true;
+            this.textBoxScore.Size = new System.Drawing.Size(100, 20);
+            this.textBoxScore.TabIndex = 6;
+            // 
+            // textBoxHighscore
+            // 
+            this.textBoxHighscore.Location = new System.Drawing.Point(1174, 316);
+            this.textBoxHighscore.Name = "textBoxHighscore";
+            this.textBoxHighscore.ReadOnly = true;
+            this.textBoxHighscore.Size = new System.Drawing.Size(100, 20);
+            this.textBoxHighscore.TabIndex = 7;
             // 
             // TetrisForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(956, 796);
+            this.ClientSize = new System.Drawing.Size(1354, 796);
+            this.Controls.Add(this.textBoxHighscore);
+            this.Controls.Add(this.textBoxScore);
+            this.Controls.Add(this.textBoxLoginInfo);
+            this.Controls.Add(this.labelLogInfo);
+            this.Controls.Add(this.labelHighscore);
+            this.Controls.Add(this.lableScore);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panelGame);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -74,6 +137,7 @@ namespace Tetris
             this.Load += new System.EventHandler(this.TetrisForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TetrisForm_KeyDown);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -83,6 +147,12 @@ namespace Tetris
         private System.Windows.Forms.Timer GameTimer;
         private System.Windows.Forms.Panel panelGame;
         private Button button1;
+        private Label lableScore;
+        private Label labelHighscore;
+        private Label labelLogInfo;
+        private TextBox textBoxLoginInfo;
+        private TextBox textBoxScore;
+        private TextBox textBoxHighscore;
     }
 }
 
