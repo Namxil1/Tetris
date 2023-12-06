@@ -41,6 +41,9 @@ namespace Tetris
             this.textBoxLoginInfo = new System.Windows.Forms.TextBox();
             this.textBoxScore = new System.Windows.Forms.TextBox();
             this.textBoxHighscore = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labelGameOver = new System.Windows.Forms.Label();
+            this.panelGame.SuspendLayout();
             this.SuspendLayout();
             // 
             // GameTimer
@@ -50,6 +53,7 @@ namespace Tetris
             // 
             // panelGame
             // 
+            this.panelGame.Controls.Add(this.labelGameOver);
             this.panelGame.Location = new System.Drawing.Point(234, 12);
             this.panelGame.Name = "panelGame";
             this.panelGame.Size = new System.Drawing.Size(400, 880);
@@ -82,6 +86,7 @@ namespace Tetris
             this.labelHighscore.Size = new System.Drawing.Size(55, 13);
             this.labelHighscore.TabIndex = 3;
             this.labelHighscore.Text = "Highscore";
+            this.labelHighscore.Visible = false;
             // 
             // labelLogInfo
             // 
@@ -117,11 +122,31 @@ namespace Tetris
             this.textBoxHighscore.Size = new System.Drawing.Size(100, 20);
             this.textBoxHighscore.TabIndex = 7;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "label1";
+            // 
+            // labelGameOver
+            // 
+            this.labelGameOver.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGameOver.Location = new System.Drawing.Point(48, 93);
+            this.labelGameOver.Name = "labelGameOver";
+            this.labelGameOver.Size = new System.Drawing.Size(293, 65);
+            this.labelGameOver.TabIndex = 9;
+            this.labelGameOver.Text = "Game Over";
+            this.labelGameOver.Visible = false;
+            // 
             // TetrisForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1354, 796);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxHighscore);
             this.Controls.Add(this.textBoxScore);
             this.Controls.Add(this.textBoxLoginInfo);
@@ -137,6 +162,7 @@ namespace Tetris
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.TetrisForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TetrisForm_KeyDown);
+            this.panelGame.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,6 +180,8 @@ namespace Tetris
         private TextBox textBoxLoginInfo;
         private TextBox textBoxScore;
         private TextBox textBoxHighscore;
+        private Label labelGameOver;
+        private Label label1;
     }
 }
 
