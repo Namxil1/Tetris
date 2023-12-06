@@ -109,6 +109,7 @@ namespace Tetris
             GameTimer.Enabled = true;
             GameTimer.Interval = 1500;
             gameActive = true;
+            labelGameOver.Visible = false;
         }
         private void TetrisForm_Load(object sender, EventArgs e)
         {
