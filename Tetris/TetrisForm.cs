@@ -102,11 +102,12 @@ namespace Tetris
 
             panelGame.Location = new Point(x, y);
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonRestartGame_Click(object sender, EventArgs e)
         {
             ResetGameField();
             game = new TetrisGame(this);
             GameTimer.Enabled = true;
+            GameTimer.Interval = 1500;
             gameActive = true;
         }
         private void TetrisForm_Load(object sender, EventArgs e)
@@ -149,7 +150,8 @@ namespace Tetris
         public void GameOver()
         {
             GameTimer.Enabled = false;
-            labelGameOver.Visible = false;
+            labelGameOver.Visible = true;
+            gameActive = false;
         }
 
 
