@@ -31,9 +31,27 @@ namespace Tetris
         {
             ClearRows();
             block.newRandomBlock();
-            Random random = new Random();
-            color = random.Next(1, 7);
+            if (IsGameOver())
+            {
+
+            }
+            else
+            {
+                Random random = new Random();
+                color = random.Next(1, 7);
+            }
         }
+
+        private bool IsGameOver()
+        {
+            if (gameField[block.BlockMiddle.X,block.BlockMiddle.Y]!=0 && gameField[block.BlockA.X, block.BlockA.Y] != 0 &&
+                gameField[block.BlockB.X, block.BlockB.Y] != 0 && gameField[block.BlockC.X, block.BlockC.Y] != 0 )
+            {
+                return true;
+            }
+            return false;
+        }
+
         private void ClearRows()
         {
             int rowsCleared = 0;
