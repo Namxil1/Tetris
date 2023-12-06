@@ -1,4 +1,6 @@
 /.vs/
 /Tetris/.vs/
 /Tetris/bin/
+/Tetris/debug/
+/Tetris/obj/debug/
 /Tetris/obj/

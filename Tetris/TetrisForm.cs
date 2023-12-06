@@ -145,5 +145,13 @@ namespace Tetris
                 game.nextTick();
             }
         }
+
+        public void GameOver()
+        {
+            GameTimer.Enabled = false;
+            labelGameOver.Visible = false;
+        }
+
+
     }
 }
