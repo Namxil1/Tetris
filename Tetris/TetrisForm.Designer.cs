@@ -34,7 +34,8 @@ namespace Tetris
             this.components = new System.ComponentModel.Container();
             this.GameTimer = new System.Windows.Forms.Timer(this.components);
             this.panelGame = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.labelGameOver = new System.Windows.Forms.Label();
+            this.buttonRestartGame = new System.Windows.Forms.Button();
             this.lableScore = new System.Windows.Forms.Label();
             this.labelHighscore = new System.Windows.Forms.Label();
             this.labelLogInfo = new System.Windows.Forms.Label();
@@ -42,7 +43,6 @@ namespace Tetris
             this.textBoxScore = new System.Windows.Forms.TextBox();
             this.textBoxHighscore = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.labelGameOver = new System.Windows.Forms.Label();
             this.panelGame.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,15 +59,25 @@ namespace Tetris
             this.panelGame.Size = new System.Drawing.Size(400, 880);
             this.panelGame.TabIndex = 0;
             // 
-            // button1
+            // labelGameOver
             // 
-            this.button1.Location = new System.Drawing.Point(59, 715);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Start Game";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.labelGameOver.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGameOver.Location = new System.Drawing.Point(48, 93);
+            this.labelGameOver.Name = "labelGameOver";
+            this.labelGameOver.Size = new System.Drawing.Size(293, 65);
+            this.labelGameOver.TabIndex = 9;
+            this.labelGameOver.Text = "Game Over";
+            this.labelGameOver.Visible = false;
+            // 
+            // buttonRestartGame
+            // 
+            this.buttonRestartGame.Location = new System.Drawing.Point(59, 715);
+            this.buttonRestartGame.Name = "buttonRestartGame";
+            this.buttonRestartGame.Size = new System.Drawing.Size(75, 23);
+            this.buttonRestartGame.TabIndex = 1;
+            this.buttonRestartGame.Text = "Start Game";
+            this.buttonRestartGame.UseVisualStyleBackColor = true;
+            this.buttonRestartGame.Click += new System.EventHandler(this.buttonRestartGame_Click);
             // 
             // lableScore
             // 
@@ -131,16 +141,6 @@ namespace Tetris
             this.label1.TabIndex = 8;
             this.label1.Text = "label1";
             // 
-            // labelGameOver
-            // 
-            this.labelGameOver.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGameOver.Location = new System.Drawing.Point(48, 93);
-            this.labelGameOver.Name = "labelGameOver";
-            this.labelGameOver.Size = new System.Drawing.Size(293, 65);
-            this.labelGameOver.TabIndex = 9;
-            this.labelGameOver.Text = "Game Over";
-            this.labelGameOver.Visible = false;
-            // 
             // TetrisForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -153,7 +153,7 @@ namespace Tetris
             this.Controls.Add(this.labelLogInfo);
             this.Controls.Add(this.labelHighscore);
             this.Controls.Add(this.lableScore);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonRestartGame);
             this.Controls.Add(this.panelGame);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
@@ -173,7 +173,7 @@ namespace Tetris
 
         private System.Windows.Forms.Timer GameTimer;
         private System.Windows.Forms.Panel panelGame;
-        private Button button1;
+        private Button buttonRestartGame;
         private Label lableScore;
         private Label labelHighscore;
         private Label labelLogInfo;

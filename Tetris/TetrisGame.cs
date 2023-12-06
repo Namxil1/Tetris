@@ -33,7 +33,7 @@ namespace Tetris
             block.newRandomBlock();
             if (IsGameOver())
             {
-
+                form.GameOver();
             }
             else
             {
