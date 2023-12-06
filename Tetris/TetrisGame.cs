@@ -72,23 +72,36 @@ namespace Tetris
             if (rowsCleared ==1)
             {
                 form.Score +=40;
+                if (form.Intervall > 250)
+                {
+                    form.Intervall -= new Random().Next(1, 15);
+                }
             }
             else if (rowsCleared == 2)
             {
                 form.Score += 100;
+                if (form.Intervall > 250)
+                {
+                    form.Intervall -= new Random().Next(5, 20);
+                }
             }
             else if (rowsCleared == 3)
             {
                 form.Score += 300;
+                if (form.Intervall > 250)
+                {
+                    form.Intervall -= new Random().Next(10, 25);
+                }
             }
             else if (rowsCleared == 4)
             {
                 form.Score += 1200;
+                if (form.Intervall > 250)
+                {
+                    form.Intervall -= new Random().Next(10, 30);
+                }
             }
-            if (form.Intervall > 250)
-            {
-                form.Intervall-= new Random().Next(1,15);
-            }
+            
         }
 
         private void updateGameField()
@@ -216,7 +229,8 @@ namespace Tetris
             && relative.BlockC.X >= 0 && relative.BlockC.X <= 9
             && relative.BlockC.Y >= 0 && relative.BlockC.Y <= 21)
             {
-                if (gameField[relative.BlockA.X, relative.BlockA.Y] == 0 && gameField[relative.BlockB.X, relative.BlockB.Y] == 0 && gameField[relative.BlockC.X, relative.BlockC.Y] == 0)
+                if (gameField[relative.BlockA.X, relative.BlockA.Y] == 0 && gameField[relative.BlockB.X, relative.BlockB.Y] == 0
+                    && gameField[relative.BlockC.X, relative.BlockC.Y] == 0)
                 {
                     block.BlockA = relative.BlockA;
                     block.BlockB = relative.BlockB;
