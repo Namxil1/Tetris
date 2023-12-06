@@ -71,9 +71,10 @@ namespace Tetris
             // 
             // buttonRestartGame
             // 
-            this.buttonRestartGame.Location = new System.Drawing.Point(59, 715);
+            this.buttonRestartGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRestartGame.Location = new System.Drawing.Point(59, 673);
             this.buttonRestartGame.Name = "buttonRestartGame";
-            this.buttonRestartGame.Size = new System.Drawing.Size(75, 23);
+            this.buttonRestartGame.Size = new System.Drawing.Size(126, 65);
             this.buttonRestartGame.TabIndex = 1;
             this.buttonRestartGame.Text = "Start Game";
             this.buttonRestartGame.UseVisualStyleBackColor = true;
@@ -82,18 +83,20 @@ namespace Tetris
             // lableScore
             // 
             this.lableScore.AutoSize = true;
-            this.lableScore.Location = new System.Drawing.Point(1205, 107);
+            this.lableScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lableScore.Location = new System.Drawing.Point(1200, 105);
             this.lableScore.Name = "lableScore";
-            this.lableScore.Size = new System.Drawing.Size(35, 13);
+            this.lableScore.Size = new System.Drawing.Size(51, 20);
             this.lableScore.TabIndex = 2;
             this.lableScore.Text = "Score";
             // 
             // labelHighscore
             // 
             this.labelHighscore.AutoSize = true;
-            this.labelHighscore.Location = new System.Drawing.Point(1196, 278);
+            this.labelHighscore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHighscore.Location = new System.Drawing.Point(1182, 281);
             this.labelHighscore.Name = "labelHighscore";
-            this.labelHighscore.Size = new System.Drawing.Size(55, 13);
+            this.labelHighscore.Size = new System.Drawing.Size(81, 20);
             this.labelHighscore.TabIndex = 3;
             this.labelHighscore.Text = "Highscore";
             this.labelHighscore.Visible = false;
@@ -101,35 +104,39 @@ namespace Tetris
             // labelLogInfo
             // 
             this.labelLogInfo.AutoSize = true;
+            this.labelLogInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLogInfo.Location = new System.Drawing.Point(56, 119);
             this.labelLogInfo.Name = "labelLogInfo";
-            this.labelLogInfo.Size = new System.Drawing.Size(88, 13);
+            this.labelLogInfo.Size = new System.Drawing.Size(131, 20);
             this.labelLogInfo.TabIndex = 4;
             this.labelLogInfo.Text = "Angemeldet als : ";
             // 
             // textBoxLoginInfo
             // 
-            this.textBoxLoginInfo.Location = new System.Drawing.Point(59, 135);
+            this.textBoxLoginInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxLoginInfo.Location = new System.Drawing.Point(59, 142);
             this.textBoxLoginInfo.Name = "textBoxLoginInfo";
             this.textBoxLoginInfo.ReadOnly = true;
-            this.textBoxLoginInfo.Size = new System.Drawing.Size(100, 20);
+            this.textBoxLoginInfo.Size = new System.Drawing.Size(100, 26);
             this.textBoxLoginInfo.TabIndex = 5;
             // 
             // textBoxScore
             // 
+            this.textBoxScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxScore.Location = new System.Drawing.Point(1174, 135);
             this.textBoxScore.Name = "textBoxScore";
             this.textBoxScore.ReadOnly = true;
-            this.textBoxScore.Size = new System.Drawing.Size(100, 20);
+            this.textBoxScore.Size = new System.Drawing.Size(100, 26);
             this.textBoxScore.TabIndex = 6;
             this.textBoxScore.Text = "0";
             // 
             // textBoxHighscore
             // 
+            this.textBoxHighscore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxHighscore.Location = new System.Drawing.Point(1174, 316);
             this.textBoxHighscore.Name = "textBoxHighscore";
             this.textBoxHighscore.ReadOnly = true;
-            this.textBoxHighscore.Size = new System.Drawing.Size(100, 20);
+            this.textBoxHighscore.Size = new System.Drawing.Size(100, 26);
             this.textBoxHighscore.TabIndex = 7;
             // 
             // label1
