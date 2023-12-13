@@ -155,6 +155,9 @@ namespace Tetris
             gameActive = false;
         }
 
-
+        private void TetrisForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }

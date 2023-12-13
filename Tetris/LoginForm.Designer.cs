@@ -28,29 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Benutzernamentextbox1 = new System.Windows.Forms.TextBox();
-            this.Passworttextbox1 = new System.Windows.Forms.TextBox();
+            this.textBoxBenutzername = new System.Windows.Forms.TextBox();
+            this.textBoxPasswort = new System.Windows.Forms.TextBox();
             this.buttonAnmelden = new System.Windows.Forms.Button();
             this.Benutzer_Anlegen = new System.Windows.Forms.Button();
             this.labelBenutzername = new System.Windows.Forms.Label();
             this.labelPasswort = new System.Windows.Forms.Label();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.SuspendLayout();
             // 
-            // Benutzernamentextbox1
+            // textBoxBenutzername
             // 
-            this.Benutzernamentextbox1.Location = new System.Drawing.Point(12, 39);
-            this.Benutzernamentextbox1.Name = "Benutzernamentextbox1";
-            this.Benutzernamentextbox1.Size = new System.Drawing.Size(253, 20);
-            this.Benutzernamentextbox1.TabIndex = 0;
+            this.textBoxBenutzername.Location = new System.Drawing.Point(12, 39);
+            this.textBoxBenutzername.Name = "textBoxBenutzername";
+            this.textBoxBenutzername.Size = new System.Drawing.Size(253, 20);
+            this.textBoxBenutzername.TabIndex = 0;
             // 
-            // Passworttextbox1
+            // textBoxPasswort
             // 
-            this.Passworttextbox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Passworttextbox1.Location = new System.Drawing.Point(11, 78);
-            this.Passworttextbox1.Name = "Passworttextbox1";
-            this.Passworttextbox1.Size = new System.Drawing.Size(253, 20);
-            this.Passworttextbox1.TabIndex = 1;
-            this.Passworttextbox1.UseSystemPasswordChar = true;
+            this.textBoxPasswort.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.textBoxPasswort.Location = new System.Drawing.Point(11, 78);
+            this.textBoxPasswort.Name = "textBoxPasswort";
+            this.textBoxPasswort.Size = new System.Drawing.Size(253, 20);
+            this.textBoxPasswort.TabIndex = 1;
+            this.textBoxPasswort.UseSystemPasswordChar = true;
             // 
             // buttonAnmelden
             // 
@@ -68,9 +69,9 @@
             this.Benutzer_Anlegen.Name = "Benutzer_Anlegen";
             this.Benutzer_Anlegen.Size = new System.Drawing.Size(109, 23);
             this.Benutzer_Anlegen.TabIndex = 3;
-            this.Benutzer_Anlegen.Text = "Benutzer_Anlegen";
+            this.Benutzer_Anlegen.Text = "Registrieren";
             this.Benutzer_Anlegen.UseVisualStyleBackColor = true;
-            this.Benutzer_Anlegen.Click += new System.EventHandler(this.Benutzer_Anlegen_Click);
+            this.Benutzer_Anlegen.Click += new System.EventHandler(this.BenutzerRegistrieren_Click);
             // 
             // labelBenutzername
             // 
@@ -99,8 +100,8 @@
             this.Controls.Add(this.labelBenutzername);
             this.Controls.Add(this.Benutzer_Anlegen);
             this.Controls.Add(this.buttonAnmelden);
-            this.Controls.Add(this.Passworttextbox1);
-            this.Controls.Add(this.Benutzernamentextbox1);
+            this.Controls.Add(this.textBoxPasswort);
+            this.Controls.Add(this.textBoxBenutzername);
             this.Name = "LoginForm";
             this.Text = "LoginForm";
             this.ResumeLayout(false);
@@ -110,11 +111,12 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox Benutzernamentextbox1;
-        private System.Windows.Forms.TextBox Passworttextbox1;
+        private System.Windows.Forms.TextBox textBoxBenutzername;
+        private System.Windows.Forms.TextBox textBoxPasswort;
         private System.Windows.Forms.Button buttonAnmelden;
         private System.Windows.Forms.Button Benutzer_Anlegen;
         private System.Windows.Forms.Label labelBenutzername;
         private System.Windows.Forms.Label labelPasswort;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

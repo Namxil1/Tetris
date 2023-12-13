@@ -167,6 +167,7 @@ namespace Tetris
             this.Name = "TetrisForm";
             this.Text = "Tetris";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TetrisForm_FormClosed);
             this.Load += new System.EventHandler(this.TetrisForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TetrisForm_KeyDown);
             this.panelGame.ResumeLayout(false);
