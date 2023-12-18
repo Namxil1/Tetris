@@ -7,17 +7,23 @@ namespace Tetris
     public partial class TetrisForm : Form
     {
         Boolean gameActive;
+        private int playerID;
         TetrisGame game;
         private Graphics g;
         private Bitmap buffer;
         private Graphics bufferG;
+        private ModelDatenbank dB;
         
         public int Score { get => Convert.ToInt32(textBoxScore.Text); set => textBoxScore.Text = value.ToString(); }
         public int Intervall { get => GameTimer.Interval; set => GameTimer.Interval = value; }
 
-        public TetrisForm(int Îd_Player)
+        public TetrisForm(int Id_Player)
         {
             InitializeComponent();
+            playerID = Id_Player;
+            dB = new ModelDatenbank();
+            string name = dB.getName(playerID);
+            textBoxLoginInfo.Text = name;
             gameActive = false;
             g = panelGame.CreateGraphics();
             buffer = new Bitmap(panelGame.Width, panelGame.Height);
@@ -110,6 +116,7 @@ namespace Tetris
             GameTimer.Interval = 1500;
             gameActive = true;
             labelGameOver.Visible = false;
+            
         }
         private void TetrisForm_Load(object sender, EventArgs e)
         {
@@ -121,7 +128,7 @@ namespace Tetris
             
             if (gameActive)
             {
-                if ( e.KeyCode == Keys.Left || e.KeyCode == Keys.A)
+                if (e.KeyCode == Keys.A || e.KeyCode == Keys.Left)
                 {
                     game.moveLeft();
                 }
@@ -133,7 +140,7 @@ namespace Tetris
                 {
                     game.downByOne();
                 }
-                else if (e.KeyCode == Keys.W)
+                else if (e.KeyCode == Keys.W ||e.KeyCode == Keys.Up)
                 {
                     game.rotateBlock();
                 }

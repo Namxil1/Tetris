@@ -51,7 +51,6 @@ namespace Tetris
             }
             return false;
         }
-
         private void ClearRows()
         {
             int rowsCleared = 0;

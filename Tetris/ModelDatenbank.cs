@@ -25,19 +25,18 @@ namespace Tetris
             SHA256 sha = SHA256.Create();
             return Convert.ToBase64String(sha.ComputeHash(Encoding.UTF8.GetBytes(password)));
         }
-        internal int GetUserID(string username,string pwd)
+        public int GetUserID(string username,string pwd)
         {
             try
             {
                 con.Open();
                 cmd = con.CreateCommand();
-                cmd.CommandText = "SELECT COUNT(ID_user) FROM user WHERE username = '" + username + "' AND username = '" + username + "';";
-                pwd = PasswordHash(pwd);
+                cmd.CommandText = "SELECT COUNT(ID_user) FROM user WHERE username = '" + username + "' AND password = '" + PasswordHash(pwd) + "';";
                 int count = Convert.ToInt32(cmd.ExecuteScalar());
                 if (count ==1)
                 {
                     cmd = con.CreateCommand();
-                    cmd.CommandText = "SELECT COUNT(ID_user) FROM user WHERE username = '" + username + "' AND username = '" + username + "';";
+                    cmd.CommandText = "SELECT ID_user FROM user WHERE username = '" + username + "' AND password = '" + PasswordHash(pwd) + "';";
                     count = Convert.ToInt32(cmd.ExecuteScalar());
                     con.Close();
                     return count;
@@ -83,6 +82,29 @@ namespace Tetris
                 return -2;
             }
             
+        }
+
+        public string getName(int ID)
+        {
+            
+            try
+            {
+                con.Open();
+                cmd = con.CreateCommand();
+                cmd.CommandText = "SELECT username FROM user WHERE ID_User = " + ID + ";";
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    return reader.GetString(0);
+                }
+                con.Close();
+
+            }
+            catch (Exception e)
+            {
+                con.Close();
+            }
+            return "";
         }
     }
 }
