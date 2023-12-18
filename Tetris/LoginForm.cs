@@ -21,7 +21,7 @@ namespace Tetris
             if (returnlogin != 0)
             {
                 this.Hide();
-                TetrisForm tetris = new TetrisForm();
+                TetrisForm tetris = new TetrisForm(returnlogin);
                 tetris.Show();
                 
             }else if (returnlogin == -2)
@@ -55,7 +55,7 @@ namespace Tetris
                     break;
                 case 1:
                     this.Hide();
-                    Form tetris = new TetrisForm();
+                    Form tetris = new TetrisForm(retrunvalue[1]);
                     tetris.Show();
                     break;
             }

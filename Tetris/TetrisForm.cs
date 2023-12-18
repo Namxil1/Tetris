@@ -15,7 +15,7 @@ namespace Tetris
         public int Score { get => Convert.ToInt32(textBoxScore.Text); set => textBoxScore.Text = value.ToString(); }
         public int Intervall { get => GameTimer.Interval; set => GameTimer.Interval = value; }
 
-        public TetrisForm()
+        public TetrisForm(int Îd_Player)
         {
             InitializeComponent();
             gameActive = false;
