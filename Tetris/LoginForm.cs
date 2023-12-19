@@ -11,14 +11,14 @@ namespace Tetris
              login = new ControllerLogin();
         }
         ControllerLogin login;
-        private string benutzername;
-        private string passwort;
+        private string benutzername = "";
+        private string passwort = "";
         private void buttonAnmelden_Click(object sender, EventArgs e)
         {
             benutzername = textBoxBenutzername.Text;
             passwort = textBoxPasswort.Text;
             int returnlogin = login.loginUser(benutzername, passwort);
-            if (returnlogin != 0)
+            if (returnlogin > 0)
             {
                 this.Hide();
                 TetrisForm tetris = new TetrisForm(returnlogin);

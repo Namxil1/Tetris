@@ -48,7 +48,6 @@ namespace Tetris
             catch (Exception e)
             {
                 con.Close();
-                MessageBox.Show(e.ToString(), "Fehler");
                 return -2;
             }
         }
@@ -78,7 +77,6 @@ namespace Tetris
             catch(Exception e) 
             {
                 con.Close();
-                MessageBox.Show(e.ToString(), "Fehler");
                 return -2;
             }
             
