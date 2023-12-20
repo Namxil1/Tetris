@@ -45,7 +45,7 @@ namespace Tetris
                 return 0;
                 
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 con.Close();
                 return -2;
@@ -66,7 +66,7 @@ namespace Tetris
                     SHA256 sha = SHA256.Create();
                     pwd = PasswordHash(pwd);
                     cmd = con.CreateCommand();
-                    cmd.CommandText = "INSERT INTO user (username,password) VALUES ('"+username+"','"+pwd+ "'); SELECT LAST_INSERT_ID();";
+                    cmd.CommandText = "INSERT INTO user (username,password,score) VALUES ('"+username+"','"+pwd+ "',0); SELECT LAST_INSERT_ID();";
                     int result = Convert.ToInt32(cmd.ExecuteScalar());
                     con.Close();
                     return result;
@@ -74,7 +74,7 @@ namespace Tetris
                 con.Close();
                 return -1;
             }
-            catch(Exception e) 
+            catch(Exception ) 
             {
                 con.Close();
                 return -2;
@@ -91,18 +91,43 @@ namespace Tetris
                 cmd = con.CreateCommand();
                 cmd.CommandText = "SELECT username FROM user WHERE ID_User = " + ID + ";";
                 MySqlDataReader reader = cmd.ExecuteReader();
+                string name = "";
                 while (reader.Read())
                 {
-                    return reader.GetString(0);
+                    name = reader.GetString(0);
                 }
                 con.Close();
+                return name;
 
             }
-            catch (Exception e)
+            catch (Exception )
             {
                 con.Close();
             }
             return "";
+        }
+        public void setHighscore(int ID, int score)
+        {
+            int currentHighscore = getHighscore(ID);
+            if (currentHighscore < score)
+            {
+                con.Open();
+                cmd = con.CreateCommand();
+                cmd.CommandText = "UPDATE user SET score = "+score+" WHERE ID_User = " + ID + ";";
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+        }
+        public int getHighscore(int ID)
+        {
+            con.Open();
+            cmd = con.CreateCommand();
+            cmd.CommandText = "SELECT score FROM user WHERE ID_User = " + ID + ";";
+            MySqlDataReader reader = cmd.ExecuteReader();
+            reader.Read();
+            int score=reader.GetInt32(0);
+            con.Close();
+            return score;
         }
     }
 }

@@ -34,6 +34,7 @@ namespace Tetris
             if (IsGameOver())
             {
                 form.GameOver();
+
             }
             else
             {

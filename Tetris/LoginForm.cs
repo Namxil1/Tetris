@@ -32,8 +32,6 @@ namespace Tetris
             {
                 MessageBox.Show("Ungültiger Benutzername oder Passwort!", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
-
         }
 
         private void BenutzerRegistrieren_Click(object sender, EventArgs e)

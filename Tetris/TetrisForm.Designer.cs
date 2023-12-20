@@ -111,6 +111,7 @@ namespace Tetris
             // 
             // textBoxLoginInfo
             // 
+            this.textBoxLoginInfo.Enabled = false;
             this.textBoxLoginInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxLoginInfo.Location = new System.Drawing.Point(59, 142);
             this.textBoxLoginInfo.Name = "textBoxLoginInfo";
@@ -121,6 +122,7 @@ namespace Tetris
             // 
             // textBoxScore
             // 
+            this.textBoxScore.Enabled = false;
             this.textBoxScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxScore.Location = new System.Drawing.Point(1174, 135);
             this.textBoxScore.Name = "textBoxScore";
@@ -131,6 +133,7 @@ namespace Tetris
             // 
             // textBoxHighscore
             // 
+            this.textBoxHighscore.Enabled = false;
             this.textBoxHighscore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxHighscore.Location = new System.Drawing.Point(1174, 316);
             this.textBoxHighscore.Name = "textBoxHighscore";

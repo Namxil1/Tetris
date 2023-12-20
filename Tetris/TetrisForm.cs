@@ -24,6 +24,7 @@ namespace Tetris
             dB = new ModelDatenbank();
             string name = dB.getName(playerID);
             textBoxLoginInfo.Text = name;
+            textBoxHighscore.Text = dB.getHighscore(playerID).ToString();
             gameActive = false;
             g = panelGame.CreateGraphics();
             buffer = new Bitmap(panelGame.Width, panelGame.Height);
@@ -116,6 +117,7 @@ namespace Tetris
             GameTimer.Interval = 1500;
             gameActive = true;
             labelGameOver.Visible = false;
+            textBoxScore.Text = "0";
             
         }
         private void TetrisForm_Load(object sender, EventArgs e)
@@ -160,6 +162,8 @@ namespace Tetris
             GameTimer.Enabled = false;
             labelGameOver.Visible = true;
             gameActive = false;
+            dB.setHighscore(playerID, Convert.ToInt32(textBoxScore.Text));
+            textBoxHighscore.Text = dB.getHighscore(playerID).ToString();
         }
 
         private void TetrisForm_FormClosed(object sender, FormClosedEventArgs e)
