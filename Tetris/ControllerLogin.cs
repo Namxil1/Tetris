@@ -8,7 +8,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Tetris
 {
-    internal class ControllerLogin
+    public class ControllerLogin
     {
         private ModelDatenbank db = new ModelDatenbank();
         public ControllerLogin()
