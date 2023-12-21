@@ -4,4 +4,3 @@ USE tetris;
 
 CREATE TABLE `tetris`.`user` ( `ID_user` INT NOT NULL AUTO_INCREMENT, `username` VARCHAR(255) NOT NULL , `password` VARCHAR(255) NOT NULL ,`Score` INT NOT NULL, PRIMARY KEY (`ID_user`)) ENGINE = InnoDB;
 
-CREATE TABLE `tetris`.`scoreboard` ( `ID_scoreboard` INT NOT NULL , `score` INT NOT NULL , PRIMARY KEY (`ID_scoreboard`)) ENGINE = InnoDB;
