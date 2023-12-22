@@ -83,7 +83,7 @@ namespace Tetris
             // 
             this.lableScore.AutoSize = true;
             this.lableScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lableScore.Location = new System.Drawing.Point(1200, 105);
+            this.lableScore.Location = new System.Drawing.Point(1497, 105);
             this.lableScore.Name = "lableScore";
             this.lableScore.Size = new System.Drawing.Size(51, 20);
             this.lableScore.TabIndex = 2;
@@ -93,7 +93,7 @@ namespace Tetris
             // 
             this.labelHighscore.AutoSize = true;
             this.labelHighscore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHighscore.Location = new System.Drawing.Point(1182, 281);
+            this.labelHighscore.Location = new System.Drawing.Point(1479, 281);
             this.labelHighscore.Name = "labelHighscore";
             this.labelHighscore.Size = new System.Drawing.Size(81, 20);
             this.labelHighscore.TabIndex = 3;
@@ -124,7 +124,7 @@ namespace Tetris
             // 
             this.textBoxScore.Enabled = false;
             this.textBoxScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxScore.Location = new System.Drawing.Point(1174, 135);
+            this.textBoxScore.Location = new System.Drawing.Point(1471, 135);
             this.textBoxScore.Name = "textBoxScore";
             this.textBoxScore.ReadOnly = true;
             this.textBoxScore.Size = new System.Drawing.Size(100, 26);
@@ -135,7 +135,7 @@ namespace Tetris
             // 
             this.textBoxHighscore.Enabled = false;
             this.textBoxHighscore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxHighscore.Location = new System.Drawing.Point(1174, 316);
+            this.textBoxHighscore.Location = new System.Drawing.Point(1471, 316);
             this.textBoxHighscore.Name = "textBoxHighscore";
             this.textBoxHighscore.ReadOnly = true;
             this.textBoxHighscore.Size = new System.Drawing.Size(100, 26);
@@ -145,7 +145,7 @@ namespace Tetris
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1354, 796);
+            this.ClientSize = new System.Drawing.Size(1754, 796);
             this.Controls.Add(this.textBoxHighscore);
             this.Controls.Add(this.textBoxScore);
             this.Controls.Add(this.textBoxLoginInfo);

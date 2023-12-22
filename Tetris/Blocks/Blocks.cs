@@ -57,11 +57,11 @@ namespace Tetris
         private void newBlockJ()
         {
             BlockMiddle.X = 4;
-            BlockMiddle.Y = 1;
-            BlockA.X = 4;
+            BlockMiddle.Y = 0;
+            BlockA.X = 5;
             BlockA.Y = 0;
-            BlockB.X = 5;
-            BlockB.Y = 0;
+            BlockB.X = 4;
+            BlockB.Y = 1;
             BlockC.X = 4;
             BlockC.Y = 2;
         }
@@ -82,7 +82,7 @@ namespace Tetris
         {
             BlockMiddle.X = 5;
             BlockMiddle.Y = 1;
-            BlockA.X = 5;
+            BlockA.X = 5;   
             BlockA.Y = 0;
             BlockB.X = 4;
             BlockB.Y = 0;
@@ -92,14 +92,14 @@ namespace Tetris
 
         private void newBlockS()
         {
-            BlockMiddle.X = 4;
+            BlockMiddle.X = 5;
             BlockMiddle.Y = 1;
             BlockA.X = 5;
-            BlockA.Y = 1;
-            BlockB.X = 5;
+            BlockA.Y = 0;
+            BlockB.X = 6;
             BlockB.Y = 0;
             BlockC.X = 4;
-            BlockC.Y = 2;
+            BlockC.Y = 1;
         }
 
         public void newRandomBlock()
@@ -107,7 +107,7 @@ namespace Tetris
             Random r = new Random();
             switch(r.Next(0, 7))
             {
-                case 0:
+                case 0: 
                     newBlockCube();
                     break;
                 case 1:

@@ -93,7 +93,7 @@ namespace Tetris
                 MySqlDataReader reader = cmd.ExecuteReader();
                 string name = "";
                 while (reader.Read())
-                {
+                {   
                     name = reader.GetString(0);
                 }
                 con.Close();
