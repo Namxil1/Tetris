@@ -10,7 +10,7 @@ namespace Tetris
             InitializeComponent();
              login = new ControllerLogin();
         }
-        ControllerLogin login;
+        public ControllerLogin login;
         private string benutzername = "";
         private string passwort = "";
         private void buttonAnmelden_Click(object sender, EventArgs e)
