@@ -103,6 +103,7 @@
     <Compile Include="Blocks\Block.cs" />
     <Compile Include="Blocks\Blocks.cs" />
     <Compile Include="ControllerLogin.cs" />
+    <Compile Include="IModel.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>

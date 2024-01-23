@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Tetris
 {
-    internal class ModelDatenbank
+    internal class ModelDatenbank:IModel
     {
         private string connectionString = "server=localhost;uid=root;pwd=;database=tetris";
         MySqlCommand cmd;
@@ -52,7 +52,7 @@ namespace Tetris
             }
         }
 
-            internal int RegisterUser(string username, string pwd)
+        public int RegisterUser(string username, string pwd)
         {
             try
             {
