@@ -5,11 +5,14 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Tetris
 {
     internal interface IModel
     {
+        IView View { get; set; }
+        IController Controller { get; set; }
         int GetUserID(string username, string pwd);
 
         int RegisterUser(string username, string pwd);

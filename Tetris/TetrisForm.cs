@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace Tetris
 {
-    public partial class TetrisForm : Form
+    public partial class TetrisForm : Form, IViewTetris
     {
         Boolean gameActive;
         private int playerID;
@@ -12,7 +12,8 @@ namespace Tetris
         private Graphics g;
         private Bitmap buffer;
         private Graphics bufferG;
-        private ModelDatenbank dB;
+        //private ModelDatenbank model;
+        private IModel model;
         
         public int Score { get => Convert.ToInt32(textBoxScore.Text); set => textBoxScore.Text = value.ToString(); }
         public int Intervall { get => GameTimer.Interval; set => GameTimer.Interval = value; }
@@ -21,10 +22,10 @@ namespace Tetris
         {
             InitializeComponent();
             playerID = Id_Player;
-            dB = new ModelDatenbank();
-            string name = dB.getName(playerID);
+            model = new ModelDatenbank();
+            string name = model.getName(playerID);
             textBoxLoginInfo.Text = name;
-            textBoxHighscore.Text = dB.getHighscore(playerID).ToString();
+            textBoxHighscore.Text = model.getHighscore(playerID).ToString();
             gameActive = false;
             g = panelGame.CreateGraphics();
             buffer = new Bitmap(panelGame.Width, panelGame.Height);
@@ -162,8 +163,8 @@ namespace Tetris
             GameTimer.Enabled = false;
             labelGameOver.Visible = true;
             gameActive = false;
-            dB.setHighscore(playerID, Convert.ToInt32(textBoxScore.Text));
-            textBoxHighscore.Text = dB.getHighscore(playerID).ToString();
+            model.setHighscore(playerID, Convert.ToInt32(textBoxScore.Text));
+            textBoxHighscore.Text = model.getHighscore(playerID).ToString();
         }
 
         private void TetrisForm_FormClosed(object sender, FormClosedEventArgs e)

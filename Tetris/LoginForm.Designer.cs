@@ -1,6 +1,6 @@
 ﻿namespace Tetris
 {
-    partial class LoginForm
+    partial class ViewLoginForm
     {
         /// <summary>
         /// Required designer variable.

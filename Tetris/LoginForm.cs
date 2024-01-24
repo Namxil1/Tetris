@@ -3,21 +3,25 @@ using System.Windows.Forms;
 
 namespace Tetris
 {
-    public partial class LoginForm : Form
+    public partial class ViewLoginForm : Form, IView
     {
-        public LoginForm()
+        private IModel model;
+        private IController controller;
+        public ViewLoginForm()
         {
             InitializeComponent();
-             login = new ControllerLogin();
         }
-        public ControllerLogin login;
         private string benutzername = "";
         private string passwort = "";
+
+        IModel IView.Model { get => model; set => model = value; }
+        IController IView.Controller { get => controller; set => controller = value; }
+
         private void buttonAnmelden_Click(object sender, EventArgs e)
         {
             benutzername = textBoxBenutzername.Text;
             passwort = textBoxPasswort.Text;
-            int returnlogin = login.loginUser(benutzername, passwort);
+            int returnlogin = controller.loginUser(benutzername, passwort);
             if (returnlogin > 0)
             {
                 this.Hide();
@@ -38,7 +42,7 @@ namespace Tetris
         {
             benutzername = textBoxBenutzername.Text;
             passwort = textBoxPasswort.Text;
-            int[] retrunvalue= login.registerUser(benutzername, passwort);
+            int[] retrunvalue= controller.registerUser(benutzername, passwort);
 
             switch (retrunvalue[0])
             {
