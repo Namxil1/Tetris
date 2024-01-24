@@ -3,27 +3,33 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Tetris
 {
     internal class ModelXML : IModel
     {
-        IView IModel.View { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        IController IModel.Controller { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        private IView view;
+        private IController controller;
+        IView IModel.View { get => view; set => view=value; }
+        IController IModel.Controller { get => controller; set => controller=value; }
 
         int IModel.getHighscore(int ID)
         {
-            throw new NotImplementedException();
+            //Nur zum Test. Soll aus XML kommen!
+            return 4711;
         }
 
         string IModel.getName(int ID)
         {
-            throw new NotImplementedException();
+            //Nur zum Test. Soll aus XML kommen!
+            return "Beast";
         }
 
         int IModel.GetUserID(string username, string pwd)
         {
-            throw new NotImplementedException();
+            //Nur zum Test. Soll aus XML kommen!
+            return 666;
         }
 
         int IModel.RegisterUser(string username, string pwd)
@@ -38,7 +44,18 @@ namespace Tetris
 
         public ModelXML()
         {
-
+            //Nur zum Test. Muss an die Aufgabe angepasst werden.
+            XDocument doc = new XDocument(
+                new XElement("Anwesenheitsliste",
+                    new XElement("Schüler",
+                        new XAttribute("Bereich", "ITA"),
+                        new XElement("Name", "Fritz"),
+                        new XElement("Nachname", "Müller"),
+                        new XElement("Klasse", "AIF31")
+                                )
+                            )
+                                          );
+            doc.Save("anwesenheitsliste.xml");
         }
 
     }

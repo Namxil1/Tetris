@@ -7,7 +7,9 @@ namespace Tetris
     public partial class TetrisForm : Form, IViewTetris
     {
         Boolean gameActive;
-        private int playerID;
+        private int playerID=-1;
+        private int playerScore = -1;
+        private string playerName = "Minus Eins";
         TetrisGame game;
         private Graphics g;
         private Bitmap buffer;
@@ -15,17 +17,48 @@ namespace Tetris
         //private ModelDatenbank model;
         private IModel model;
         
+
+        
         public int Score { get => Convert.ToInt32(textBoxScore.Text); set => textBoxScore.Text = value.ToString(); }
         public int Intervall { get => GameTimer.Interval; set => GameTimer.Interval = value; }
+        int IViewTetris.PlayerID { get => playerID; set => playerID = value; }
+        string IViewTetris.PlayerName { 
+            get => playerName;
+            set
+            {
+                playerName = value;
+                textBoxLoginInfo.Text = playerName;
+            }
+        }
+        int IViewTetris.PlayerScore { 
+            get => playerScore;
+            set
+            {
+                playerScore = value;
+                textBoxHighscore.Text = playerScore.ToString();
+            }
+        }
 
-        public TetrisForm(int Id_Player)
+
+        IModel IViewTetris.Model { get => model; set => model = value; }
+
+        //Eine Konstruktor mit Parameter ist hier nicht sinnvoll!
+        //Die View wird erzeugt, ohne den Spieler zu kennen.
+        //Der Controller sollte den Spieler setzen können!
+        public TetrisForm()
         {
             InitializeComponent();
-            playerID = Id_Player;
-            model = new ModelDatenbank();
-            string name = model.getName(playerID);
-            textBoxLoginInfo.Text = name;
-            textBoxHighscore.Text = model.getHighscore(playerID).ToString();
+            //playerID = Id_Player;
+
+            //Neeee!!!
+            //model = new ModelDatenbank();
+            
+            //Setzt der Controller
+            //string name = model.getName(playerID);
+            textBoxLoginInfo.Text = "";
+            textBoxHighscore.Text = "";
+            //model.getHighscore(playerID).ToString();
+            
             gameActive = false;
             g = panelGame.CreateGraphics();
             buffer = new Bitmap(panelGame.Width, panelGame.Height);
@@ -170,6 +203,11 @@ namespace Tetris
         private void TetrisForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        void IViewTetris.show()
+        {
+            this.Show();
         }
     }
 }

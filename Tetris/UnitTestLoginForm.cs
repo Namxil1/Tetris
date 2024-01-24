@@ -9,12 +9,14 @@ namespace Tetris.Tests
         public void TestLogin()
         {
             // Arrange
-            ViewLoginForm loginForm = new ViewLoginForm();
+            IView loginForm = new ViewLoginForm();
             string Username = "admin";
             string Password = "admin";
 
             // Act
-            int result = loginForm.login.loginUser(Username, Password);
+            int result = 0;
+            //Das Form hat keine öffenliche Methode für den Login!
+            //int result = loginForm. .login.loginUser(Username, Password);
 
             // Assert
             Assert.IsTrue(result > 0, "login erfolgreich");
@@ -29,7 +31,10 @@ namespace Tetris.Tests
             string Password = "NeuesPasswort";
 
             // Act
-            int[] result = loginForm.login.registerUser(Username, Password);
+            int[] result = { 0 };
+            //Das Form hat keine öffenliche Methode für den Login!
+
+            //loginForm.login.registerUser(Username, Password);
 
             // Assert
             Assert.IsTrue(result[0] == 1 && result[1] > 0, "registrierung erfolgreich");

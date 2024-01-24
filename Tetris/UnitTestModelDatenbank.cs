@@ -5,12 +5,12 @@ namespace Tetris.Tests
     [TestClass]
     public class ModelDatenbankTests
     {
-        private ModelDatenbank _modelDatenbank;
+        private IModel model;
 
         [TestInitialize]
         public void TestInitialize()
         {
-            _modelDatenbank = new ModelDatenbank();
+            model = new ModelDatenbank();
         }
 
         [TestMethod]
@@ -21,7 +21,7 @@ namespace Tetris.Tests
             string password = "admin";
 
             // Act
-            int result = _modelDatenbank.GetUserID(username, password);
+            int result = model.GetUserID(username, password);
 
             // Assert
             Assert.AreEqual(3, result);
@@ -36,7 +36,7 @@ namespace Tetris.Tests
             string password = "Test";
 
             // Act
-            int result = _modelDatenbank.RegisterUser(username, password);
+            int result = model.RegisterUser(username, password);
 
             // Assert
             Assert.IsTrue(result > 0); 
@@ -50,7 +50,7 @@ namespace Tetris.Tests
             string password = "admin";
 
             // Act
-            int result = _modelDatenbank.RegisterUser(username, password);
+            int result = model.RegisterUser(username, password);
 
             // Assert
             Assert.AreEqual(-1, result);
@@ -63,7 +63,7 @@ namespace Tetris.Tests
             int userID = 3;
 
             // Act
-            string result = _modelDatenbank.getName(userID);
+            string result = model.getName(userID);
 
             // Assert
             Assert.AreEqual("admin", result);
@@ -77,10 +77,10 @@ namespace Tetris.Tests
             int newScore = 100;
 
             // Act
-            _modelDatenbank.setHighscore(userID, newScore);
+            model.setHighscore(userID, newScore);
 
             // Assert
-            int updatedHighscore = _modelDatenbank.getHighscore(userID);
+            int updatedHighscore = model.getHighscore(userID);
             Assert.AreEqual(newScore, updatedHighscore);
         }
 
