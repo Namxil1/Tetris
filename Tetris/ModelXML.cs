@@ -35,5 +35,11 @@ namespace Tetris
         {
             throw new NotImplementedException();
         }
+
+        public ModelXML()
+        {
+
+        }
+
     }
 }
