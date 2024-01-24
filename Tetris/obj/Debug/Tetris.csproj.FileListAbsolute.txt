@@ -136,3 +136,11 @@ C:\Users\Nutzer\Source\Repos\Namxil1\Tetris\Tetris\bin\Debug\System.Threading.Ta
 C:\Users\Nutzer\Source\Repos\Namxil1\Tetris\Tetris\bin\Debug\de\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
 C:\Users\Nutzer\Source\Repos\Namxil1\Tetris\Tetris\bin\Debug\de\Microsoft.VisualStudio.TestTools.UITest.Extension.resources.dll
 C:\Users\Nutzer\Source\Repos\Namxil1\Tetris\Tetris\obj\Debug\Tetris.csproj.CopyComplete
+H:\SOFT\TetrisAIF31_23_24\Tetris\obj\Debug\Tetris.csproj.AssemblyReference.cache
+H:\SOFT\TetrisAIF31_23_24\Tetris\obj\Debug\Tetris.ViewLoginForm.resources
+H:\SOFT\TetrisAIF31_23_24\Tetris\obj\Debug\Tetris.TetrisForm.resources
+H:\SOFT\TetrisAIF31_23_24\Tetris\obj\Debug\Tetris.Properties.Resources.resources
+H:\SOFT\TetrisAIF31_23_24\Tetris\obj\Debug\Tetris.csproj.GenerateResource.cache
+H:\SOFT\TetrisAIF31_23_24\Tetris\obj\Debug\Tetris.csproj.CoreCompileInputs.cache
+H:\SOFT\TetrisAIF31_23_24\Tetris\obj\Debug\Tetris.exe
+H:\SOFT\TetrisAIF31_23_24\Tetris\obj\Debug\Tetris.pdb

@@ -9,7 +9,7 @@ namespace Tetris.Tests
         public void TestLogin()
         {
             // Arrange
-            LoginForm loginForm = new LoginForm();
+            ViewLoginForm loginForm = new ViewLoginForm();
             string Username = "admin";
             string Password = "admin";
 
@@ -24,7 +24,7 @@ namespace Tetris.Tests
         public void TestRegistrierung()
         {
             // Arrange
-            LoginForm loginForm = new LoginForm();
+            ViewLoginForm loginForm = new ViewLoginForm();
             string Username = "NeuerUser";
             string Password = "NeuesPasswort";
 
