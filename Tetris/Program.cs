@@ -22,6 +22,8 @@ namespace Tetris
             Application.SetCompatibleTextRenderingDefault(false);
             
             model = new ModelXML();
+            //model = new ModelDatenbank();
+            
             view = new ViewLoginForm();
             controller = new ControllerLogin();
             viewTetris=new TetrisForm();

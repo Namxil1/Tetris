@@ -11,13 +11,14 @@ namespace Tetris
     {
         private IView view;
         private IController controller;
+        private XDocument doc;
         IView IModel.View { get => view; set => view=value; }
         IController IModel.Controller { get => controller; set => controller=value; }
 
         int IModel.getHighscore(int ID)
         {
             //Nur zum Test. Soll aus XML kommen!
-            return 4711;
+            return 69420;
         }
 
         string IModel.getName(int ID)
@@ -44,18 +45,23 @@ namespace Tetris
 
         public ModelXML()
         {
-            //Nur zum Test. Muss an die Aufgabe angepasst werden.
-            XDocument doc = new XDocument(
-                new XElement("Anwesenheitsliste",
-                    new XElement("Schüler",
-                        new XAttribute("Bereich", "ITA"),
-                        new XElement("Name", "Fritz"),
-                        new XElement("Nachname", "Müller"),
-                        new XElement("Klasse", "AIF31")
+            try
+            {
+                this.doc = XDocument.Load("userlisteoderso.xml");
+            }
+            catch
+            {
+                doc = new XDocument(
+                    new XElement("userliesteoderso",
+                        new XElement("useroderso",
+                            new XAttribute("passwort", "12345"),
+                            new XElement("name", "Fritz"),
+                            new XElement("higscore", "0")
+                                    )
                                 )
-                            )
-                                          );
-            doc.Save("anwesenheitsliste.xml");
+                                              );
+                doc.Save("userlisteoderso.xml");
+            }
         }
 
     }
