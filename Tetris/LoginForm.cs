@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
 namespace Tetris
@@ -24,17 +25,26 @@ namespace Tetris
             int returnlogin = controller.loginUser(benutzername, passwort);
             if (returnlogin > 0)
             {
-                this.Hide();
-                TetrisForm tetris = new TetrisForm(returnlogin);
-                tetris.Show();
+                //Hide ist hier nicht gut!
+                //Das Fenster kann von nirgendwo mehr geschlossen werden!
+                //this.close() würde das ganze Programm schließen...
+                //this.Hide();
+                
+                
+                //Das kann eine View nicht!
+                //TetrisForm tetris = new TetrisForm(returnlogin);
+                //tetris.Show();
                 
             }else if (returnlogin == -2)
             {
-                MessageBox.Show("Verbindung zu Datenbank kann nicht hergestellt werden!", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //Das sollte das Model melden!
+                //MessageBox.Show("Verbindung zu Datenbank kann nicht hergestellt werden!", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show("Ungültiger Benutzername oder Passwort!", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //Das sollte der Controller eher zur Anzeige in der View veranlassen...
+
+                //MessageBox.Show("Ungültiger Benutzername oder Passwort!", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -57,11 +67,18 @@ namespace Tetris
                     break;
                 case 1:
                     this.Hide();
-                    Form tetris = new TetrisForm(retrunvalue[1]);
-                    tetris.Show();
+                    //Das muss über den Controller gesteuert werden!
+                    //Hier können auch nicht immer wieder Views erzeugt werden!
+                    //Form tetris = new TetrisForm(retrunvalue[1]);
+                    //tetris.Show();
                     break;
             }
             
+        }
+
+        void IView.hide()
+        {
+            this.Hide();
         }
     }
 }

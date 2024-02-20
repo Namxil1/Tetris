@@ -11,6 +11,7 @@ namespace Tetris
         private static IModel model;
         private static IView view;
         private static IController controller;
+        private static IViewTetris viewTetris;
         /// <summary>
         /// Der Haupteinstiegspunkt für die Anwendung.
         /// </summary>
@@ -21,14 +22,21 @@ namespace Tetris
             Application.SetCompatibleTextRenderingDefault(false);
             
             model = new ModelXML();
+            //model = new ModelDatenbank();
+            
             view = new ViewLoginForm();
             controller = new ControllerLogin();
+            viewTetris=new TetrisForm();
+
 
             view.Controller = controller;
             view.Model = model;
 
+            viewTetris.Model = model;
+
             controller.Model = model;
             controller.View = view;
+            controller.ViewTetris = viewTetris;
 
             model.Controller = controller;
             model.View= view;

@@ -5,5 +5,6 @@
         IModel Model { get; set; }
         IController Controller { get ; set; }
 
+        void hide();
     }
 }

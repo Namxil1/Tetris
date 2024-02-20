@@ -100,9 +100,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.cs" />
     <Compile Include="Blocks\Block.cs" />
     <Compile Include="Blocks\Blocks.cs" />
     <Compile Include="ControllerLogin.cs" />
+    <Compile Include="Gamer.cs" />
     <Compile Include="IController.cs" />
     <Compile Include="IModel.cs" />
     <Compile Include="IView.cs" />
@@ -126,6 +128,7 @@
     <Compile Include="TetrisGame.cs" />
     <Compile Include="UnitTestLoginForm.cs" />
     <Compile Include="UnitTestModelDatenbank.cs" />
+    <Compile Include="User.cs" />
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
